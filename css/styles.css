@@ -9781,6 +9781,17 @@ button.bg-dark:focus {
   color: #fff !important;
 }
 
+.ml2 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+  color: var(--red) !important;
+}
+
 .text-primary-name {
   color: var(--green) !important;
 }
@@ -10065,9 +10076,9 @@ p.lead {
     padding: 0.5rem;
   }
   #sideNav .navbar-brand .img-profile {
-    max-width: 10rem;
-    max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    max-width: 12rem;
+    max-height: 12rem;
+    /* border: 0.5rem solid rgba(255, 255, 255, 0.2); */
   }
   #sideNav .navbar-collapse {
     display: flex;
@@ -10093,7 +10104,7 @@ p.lead {
   justify-content: center;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: #495057;
+  background-color: #ffffff;
   color: #fff;
   border-radius: 100%;
   font-size: 1.5rem;
