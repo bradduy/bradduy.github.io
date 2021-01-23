@@ -371,6 +371,11 @@ h1, h2, h3, h4, h5, h6,
   color: #ffff
 }
 
+.flex-grow-1-new ul li, .flex-grow-1-new p {
+  padding-left: 2rem;
+  color: #ffff
+}
+
 h1, .h1 {
   font-size: 6rem;
 }
@@ -6597,6 +6602,13 @@ button.bg-dark:focus {
 
 .flex-shrink-0 {
   flex-shrink: 0 !important;
+}
+
+.flex-shrink-0-new {
+  flex-shrink: 0 !important;
+  .justify-content-between {
+    justify-content: space-between !important;
+  }
 }
 
 .flex-shrink-1 {
