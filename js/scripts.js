@@ -61,3 +61,7 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
   });
+
+$('body').bind('copy paste',function(e) {
+    e.preventDefault(); return false; 
+});
