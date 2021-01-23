@@ -9801,15 +9801,20 @@ button.bg-dark:focus {
 .ml2 .letter {
   display: inline-block;
   line-height: 1em;
-  color: var(--red) !important;
+  color: #FF0000 !important;
 }
 
 .text-primary-name {
   color: var(--green) !important;
 }
 
+.text-primary-link {
+  color: #FF0000 !important;
+}
+
 .text-primary {
-  color: var(--red) !important;
+  font-weight: 900;
+  color: #FF0000 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -10058,7 +10063,7 @@ p.lead {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
   font-size: 1.43rem;
-  color: var(--red)
+  color: #FF0000
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
