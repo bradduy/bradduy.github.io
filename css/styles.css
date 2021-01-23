@@ -3890,6 +3890,7 @@ input[type=button].btn-block {
   padding: 0.5rem 1rem;
 }
 .nav-link:hover, .nav-link:focus {
+  background-color: white;
   text-decoration: none;
 }
 .nav-link.disabled {
@@ -4295,7 +4296,7 @@ input[type=button].btn-block {
   color: rgba(255, 255, 255, 0.5);
 }
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-  color: rgba(255, 255, 255, 0.75);
+  color: black;
 }
 .navbar-dark .navbar-nav .nav-link.disabled {
   color: rgba(255, 255, 255, 0.25);
@@ -4304,7 +4305,7 @@ input[type=button].btn-block {
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+  color: #FF0000;
 }
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
@@ -6606,9 +6607,6 @@ button.bg-dark:focus {
 
 .flex-shrink-0-new {
   flex-shrink: 0 !important;
-  .justify-content-between {
-    justify-content: space-between !important;
-  }
 }
 
 .flex-shrink-1 {
@@ -10043,16 +10041,6 @@ h1 {
 p, p ul li {
   color: white
 }
-
-p {
-  ul {
-    li {
-      color: white;
-    }
-  }
-}
-
-
 
 p.lead {
   font-size: 1.15rem;
