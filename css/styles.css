@@ -9806,26 +9806,23 @@ button.bg-dark:focus {
   color: #FF0000 !important;
 }
 
-.ml4 {
+.ml9 {
   position: relative;
-
-}
-.ml4 .letters {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  opacity: 0; 
+  font-weight: 200;
+  font-size: 4em;
 }
 
-.ml15 {
-  font-weight: 800;
-  font-size: 3.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
+.ml9 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
 }
 
-.ml15 .word {
+.ml9 .letter {
+  transform-origin: 50% 100%;
   display: inline-block;
   line-height: 1em;
 }
@@ -10177,5 +10174,8 @@ section.resume-section .resume-section-content {
     padding-right: 3rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+  section.resume-section.resume-section-content.subheading {
+    font-size: 1.43rem
   }
 }
