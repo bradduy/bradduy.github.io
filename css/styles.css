@@ -9806,6 +9806,30 @@ button.bg-dark:focus {
   color: #FF0000 !important;
 }
 
+.ml4 {
+  position: relative;
+
+}
+.ml4 .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  opacity: 0; 
+}
+
+.ml15 {
+  font-weight: 800;
+  font-size: 3.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml15 .word {
+  display: inline-block;
+  line-height: 1em;
+}
+
 .text-primary-name {
   color: var(--green) !important;
 }
