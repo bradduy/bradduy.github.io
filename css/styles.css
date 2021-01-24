@@ -10054,7 +10054,7 @@ p.lead {
 .subheading {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
-  font-size: 1.43rem;
+  font-size: 2.123rem;
   color: #FF0000
 }
 
@@ -10142,14 +10142,6 @@ section.resume-section .resume-section-content {
   width: 100%;
 }
 
-.running-subtitle {
-  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 500;
-  font-size: 2rem;
-  color: #FF0000;
-  margin-bottom: 3rem !important;
-}
-
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
@@ -10161,11 +10153,5 @@ section.resume-section .resume-section-content {
     padding-right: 3rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-}
-
-@media (min-width: 992px) {
-  section.resume-section.resume-section-content.running-subtitle ml2 {
-    font-size: 1.43rem;
   }
 }
