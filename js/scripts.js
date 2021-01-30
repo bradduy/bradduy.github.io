@@ -79,10 +79,14 @@ anime.timeline({ loop: true })
         easing: "easeOutExpo",
         delay: 1000
     });
-
-$('body').bind('copy paste', function (e) {
-    e.preventDefault(); return false;
-});
+console.log('------- Xin chào / Hello / 你好 / Hallo / 안녕하세요 -------')
+console.log('------- I dont know why you open this in my webpage.')
+console.log("------- But if you're interested in my profile, you can write me an email, even in your native language.")
+console.log("------- We might work together in the future.")
+console.log("--------------  (^ ^) --------------")
+// $('body').bind('copy paste', function (e) {
+//     e.preventDefault(); return false;
+// });
 
 // function popup(theUrl, callback)
 // {

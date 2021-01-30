@@ -3642,7 +3642,10 @@ input[type=button].btn-block {
   pointer-events: none;
   cursor: default;
 }
-
+.nav-link-logo:hover, .nav-link-logo:focus {
+  background-color: none !important;
+  text-decoration: none;
+}
 .nav-tabs {
   border-bottom: 1px solid #dee2e6;
 }
@@ -3830,7 +3833,7 @@ input[type=button].btn-block {
 @media (max-width: 767.98px) {
   .running-title {
     font-size: 1.4rem !important; 
-    text-align: center
+    text-align: center;
   }
   h1 {
     font-size: 4rem !important;
@@ -9777,7 +9780,6 @@ p.lead {
   #sideNav .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
-    /* border: 0.5rem solid rgba(255, 255, 255, 0.2); */
   }
   #sideNav .navbar-collapse {
     display: flex;
@@ -9796,28 +9798,6 @@ p.lead {
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
     display: block;
   }
-}
-.social-icons .social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 3.5rem;
-  width: 3.5rem;
-  background-color: #ffffff;
-  color: #fff;
-  border-radius: 100%;
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
-}
-.social-icons .social-icon:last-child {
-  margin-right: 0;
-}
-.social-icons .social-icon:hover {
-  background-color: #bd5d38;
-}
-
-.dev-icons {
-  font-size: 3rem;
 }
 
 section.resume-section {
