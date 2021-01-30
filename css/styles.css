@@ -3829,13 +3829,21 @@ input[type=button].btn-block {
 }
 @media (max-width: 767.98px) {
   .running-title {
-    font-size: 1.45rem !important; 
-    flex-wrap: nowrap;
+    font-size: 1.42rem !important; 
+    text-align: center
   }
   h1 {
-    background-color: red !important;
     font-size: 4rem !important;
   }
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+  section.resume-section {
+    padding-top: 2rem !important;
+  }
+  p.lead {
+    font-size: 1.1rem !important;
+}
   .navbar-expand-md > .container,
 .navbar-expand-md > .container-fluid,
 .navbar-expand-md > .container-sm,
@@ -7377,7 +7385,7 @@ button.bg-dark:focus {
 
 .mb-5,
 .my-5 {
-  margin-bottom: 3rem !important;
+  margin-bottom: 3rem;
 }
 
 .mb-5-5 {
@@ -9842,7 +9850,7 @@ section.resume-section .resume-section-content {
 .box2 .box-content{width:100%;height:100%;position:absolute;top:50%;left:50%;z-index:2;transform:translate(-50%,-50%)}
 .box2 .box-content:after,.box2 .box-content:before,.box2:after,.box2:before{content:"";width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);transition:all .5s ease 0s}
 .box2:before{background:linear-gradient(45deg,rgba(0,0,0,.2) 49%,transparent 50%);left:-100%}
-.box2:after{background:linear-gradient(45deg,transparent 49%,rgba(0,0,0,.2) 50%);left:700%}
+.box2:after{background:linear-gradient(45deg,transparent 49%,rgba(0,0,0,.2) 50%);left:1200%}
 .box2 .box-content:after,.box2 .box-content:before{width:65%;height:65%;background:linear-gradient(45deg,rgba(0,0,0,.3) 49%,transparent 50%);left:-100%;transition-delay:.1s}
 .box1 .box-content:after{background:linear-gradient(45deg,transparent 49%,rgba(0,0,0,.3) 50%);left:160%}
 .box2:hover .box-content:after,.box2:hover .box-content:before,.box2:hover:after,.box2:hover:before{left:50%}
