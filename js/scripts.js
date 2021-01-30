@@ -83,3 +83,16 @@ anime.timeline({ loop: true })
 $('body').bind('copy paste', function (e) {
     e.preventDefault(); return false;
 });
+
+// function popup(theUrl, callback)
+// {
+//     var xmlHttp = new XMLHttpRequest();
+//     xmlHttp.onreadystatechange = function() { 
+//         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+//             callback(xmlHttp.responseText);
+//     }
+//     xmlHttp.open("GET", 'https://gsp.seoultech.ac.kr/hcm/plugin/prof2/detail.jsp?menu=9122&lang=en&id=02567', true); // true for asynchronous 
+//     xmlHttp.setRequestHeader('Access-Control-Allow-Origin', 'https://gsp.seoultech.ac.kr/')
+//     xmlHttp.setRequestHeader('Content-Type', 'application/html');
+//     xmlHttp.send();
+// }
