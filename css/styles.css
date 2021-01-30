@@ -3843,7 +3843,10 @@ input[type=button].btn-block {
   }
   p.lead {
     font-size: 1.1rem !important;
-}
+  }
+  .text-primary-name {
+    text-align: center;
+  }
   .navbar-expand-md > .container,
 .navbar-expand-md > .container-fluid,
 .navbar-expand-md > .container-sm,
