@@ -3832,6 +3832,9 @@ input[type=button].btn-block {
     font-size: 1.45rem !important; 
     flex-wrap: nowrap;
   }
+  h1 {
+    font-size: 4rem !important;
+  }
   .navbar-expand-md > .container,
 .navbar-expand-md > .container-fluid,
 .navbar-expand-md > .container-sm,
