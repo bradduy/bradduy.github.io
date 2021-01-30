@@ -3829,7 +3829,7 @@ input[type=button].btn-block {
 }
 @media (max-width: 767.98px) {
   .running-title {
-    font-size: 1.42rem !important; 
+    font-size: 1.4rem !important; 
     text-align: center
   }
   h1 {
