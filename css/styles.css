@@ -3836,7 +3836,7 @@ input[type=button].btn-block {
     font-size: 4rem !important;
   }
   .mb-5 {
-    margin-bottom: 2rem !important;
+    margin-bottom: 0.5rem !important;
   }
   section.resume-section {
     padding-top: 2rem !important;
