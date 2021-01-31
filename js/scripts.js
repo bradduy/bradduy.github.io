@@ -79,24 +79,4 @@ anime.timeline({ loop: true })
         easing: "easeOutExpo",
         delay: 1000
     });
-console.log('------- Xin chào / Hello / 你好 / Hallo / 안녕하세요 -------')
-console.log('------- I dont know why you open this in my webpage.')
-console.log("------- But if you're interested in my profile, you can write me an email, even in your native language.")
-console.log("------- We might work together in the future.")
-console.log("--------------  (^ ^) --------------")
-// $('body').bind('copy paste', function (e) {
-//     e.preventDefault(); return false;
-// });
-
-// function popup(theUrl, callback)
-// {
-//     var xmlHttp = new XMLHttpRequest();
-//     xmlHttp.onreadystatechange = function() { 
-//         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-//             callback(xmlHttp.responseText);
-//     }
-//     xmlHttp.open("GET", 'https://gsp.seoultech.ac.kr/hcm/plugin/prof2/detail.jsp?menu=9122&lang=en&id=02567', true); // true for asynchronous 
-//     xmlHttp.setRequestHeader('Access-Control-Allow-Origin', 'https://gsp.seoultech.ac.kr/')
-//     xmlHttp.setRequestHeader('Content-Type', 'application/html');
-//     xmlHttp.send();
-// }
+console.log("------- Xin chào / Hello / 你好 / Hallo / 안녕하세요.\n------- I dont know why you open this in my webpage.\n------- But if you're interested in my profile, you can write me an email, even in your native language.\n------- We might work together in the future.\n(^ ^)")
