@@ -7945,6 +7945,10 @@ section.resume-section .resume-section-content {
   }
 }
 
+.text-warning {
+  color: #ffc107;
+}
+
 
 .box2{position:relative}
 .box2 img{width:100%;height:auto}
