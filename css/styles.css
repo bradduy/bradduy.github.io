@@ -66,7 +66,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: var(--green);
+  background-color: rgb(153, 241, 20);
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -368,12 +368,12 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .flex-grow-1 ul li, .flex-grow-1 p {
-  color: #ffff
+  color: black
 }
 
 .flex-grow-1-new ul li, .flex-grow-1-new p {
   padding-left: 2rem;
-  color: #ffff
+  color: black;
 }
 
 h1, .h1 {
@@ -5851,7 +5851,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: greenyellow !important;
+  background-color: var(--green) !important;
 }
 
 
@@ -7855,7 +7855,7 @@ h1 {
 }
 
 p, p ul li {
-  color: whitesmoke
+  color: black
 }
 
 p.lead {
