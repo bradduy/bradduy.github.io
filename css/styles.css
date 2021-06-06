@@ -66,7 +66,8 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: rgb(153, 241, 20);
+  background-color: white; 
+  /* rgb(153, 241, 20) */
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -7712,7 +7713,7 @@ button.bg-dark:focus {
 }
 
 .text-white {
-  color: #fff !important;
+  color: var(--green) !important;
 }
 
 .ml2 {
