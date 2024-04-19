@@ -83,7 +83,7 @@ let yesButtonSize = 1;
 
 noBtn.addEventListener('click', (event) => {
   if (moveCount < 2) {
-    noBtn.style.transform = `translateY(${event.clientY + 0.1}px)`;
+    noBtn.style.transform = `translateY(${event.clientY * 0.5}px)`;
     moveCount++;
   } else if (cryCount < 1) {
     messageContainer.textContent = 'Anh không tin! Chắc e nhầm. Nhấn xanh mới đúng.';
