@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="portfolio" />
+    <meta name="author" content="" />
+    <title>Duy Tran Thanh</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.jpg" />
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet"
+        type="text/css" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body id="page-top">
+    <!-- <div class="ad_top_39054"></div> -->
+    <!-- <style type="text/css">
+        @media only screen and (max-width: 1300px) {
+        #anhien {
+        display: none;
+          }
+        }
+        @media only screen and (max-width: 765px) {
+        #respo {
+        width: 150px !important;
+          }
+        }
+    </style>
+    <span id="anhien">
+    <img style="position:fixed;z-index:9999;top:0;left:0;width:120px;" src="http://4.bp.blogspot.com/-Vlt_TV7Q9V8/UsA7lwMZryI/AAAAAAAAA3Q/ref7HQc1968/s1600/banner_left.png" _cke_saved_src="http://4.bp.blogspot.com/-Vlt_TV7Q9V8/UsA7lwMZryI/AAAAAAAAA3Q/ref7HQc1968/s1600/banner_left.png"/>
+    <img style="position:fixed;z-index:9999;top:0;right:0;width:120px;" src="http://4.bp.blogspot.com/-A85wPjYE2BM/UsA7mDDQWmI/AAAAAAAAA3U/R9bxy6zSrLs/s1600/banner_right.png"/>
+    </span>
+    <div style="position:fixed;z-index:9999;bottom:-70px;left:0;width:100%;height:104px;background:url(https://i.imgur.com/VN8j22P.png) repeat-x bottom left;"></div>
+    <img id="respo" style="position:fixed;z-index:9999;bottom:0px;left:20px;width: 200px;" src="https://i.imgur.com/zTwYI9w.png"/> -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="d-block d-lg-none">Welcome</span>
+            <span class="d-none d-lg-block">
+                <div class="box2">
+                    <img class="img-fluid img-profile mx-auto mb-2" alt=""
+                        src="https://lh3.googleusercontent.com/fife/AAWUweXnByPPhLvQ0nJSyylA7FeKHGa1sMJE-NAIyN4EtklnoDkEy_3UUIOB62fWd0RdVH0actniJvcfrZ47WTo8cZRPsMh4tzGKwJaE9yYkHX-YLfdslHXHivPrRh_TwRBFKEdmfref4GYZQJOPs_yNaSQr8bNo83S6-xeLKJzU_ArawXD6iBtDvU1BgIk79D5HIkOwz9ao0Ufkx37ofw5nRvJoQuDw6haw6C26GLkwhnxUS43Duf1JS2LI_ahiHuP9PwNjTxxXcA4TyIk98HF7XZL7VrRcB84lOFlvMQ-zla-Hhrls2D5hM6gGyvIXTn24xQvbPPhvN_m1ndVShViBkuRjNZCgEyqeuQfTq2qjueEq0khLb0aZO0YvvWanDBCv3GHVsDUCKzri-YNrDDc5do4BzvqqM4OCkTYGjwZC6Z1phkYYiJThmCWO6DgH4vHlcBWeeYcXkLsp3NaHhJBvqfHMntP88cDLv2e51SUXup_SCQqS2CIZvEP03TLbbOHZOJn04CJUIBM8ye47wIMfJKLScDwTIMcxdqC-WrhqUQy4qIlhRj_jff7DTEwjG4W5HeIPPWYNN7pXMAwdByfIKgRUnHT3cDY8IHDUV9qeS2LHQV83lSBnfo89YKOT17hOEfKw59DYXmfSeOVLPwgASKoqcTG6wao581hieuN7jTZjM3ic2vzoDaxDRujxCWaO_mMk-dAfG__p033NZMd5YOkq7OB0IhYJiqE8Oku1-bxd7-oEx0EGcR6GOxhViBUtghoZUqy-oSA94TcWUKqPhxJci0HXVJ9MQisKuxxyxrGQgIJSIBh6mShlSAF7BXvllk3qCuOn30lEmHXryA4rl3WspNosr0epSZkqg5yjUCX_-1iGabLLOpyeZ-Ocs6sIrmsg8eLcUmzkCJvaEdVOdRVxHWTGSHWNFLXB4i30eJdkYxddQaMV9moo4RjkBTZIq_RsJZxGPQv2pP7kHsdTScZj--Zi4yIjwaYj5XFTMGlA-Vfr2UQLYNEMpUtef_2z2CbHHa-bOwQiLtqn85b-Zs5UEt8kohEjVFfm-Hn0xXpL8LKFQZeAGBnrHuKRnGlzPwV9yxEsld97wLwNVk9JE27HWbIK-9ISvjZHYKWEFguamWz4uuHdnQVDqeo8gRUxpjfkFR2QiWqEzhzoCPUyf33dw36j_ilAEWGQ1F8pHS9WoQ2VqhfdQvuLJZhudyatMspy_vfGmMZSDobi1Js9-eiZ22tRYe2cZF0l-y3jzYe_MHuJmCsMisshsLW-3t0lsuSHQblaoaKF4ikRLC3buPAXvvEXSs1fGsDZXg8LQvxZ-7mUyMKIqCpUrmcZub8p1Vpgk08h-rcU4_kN71KFbc0HdHjqS2XxEjD_YCDRQBKKky2OOXX-t8q3MuSFEphnoyK1Ig4f739YDbXIDg-KhqPVEWLVJvKqskiI09dtUD7KjZkyKbig8fH2=w1245-h589" />
+                    <!-- src="https://lh3.googleusercontent.com/fife/AAWUweWEd9gJ1p5GV-0z5PCk_KlOH1gPXVHhE7wam3N3rH33PqDefMJnSs3BuwsMq0mgy0zCYtzNprNlpKyG5wLf1w-KZ40rlBNlJfVCJhAJvR-QDfvyJK_bZ4bsTQ_GWZkNo4PI6uwDNXo41VfWLdDm17UZ6psGozbiy7CbjWPqbNTAfWlFXtXoHxlnROyiEDijpt-1A3yaxutU8AlsLtl4MgM-TfyxZa4ZSYW3lHRsNUnpROQfS6-mbJ4sGPZsoABbYdvvhaWzpl08rplWYHTexq2pwx7MNJGxLlDxp5Z4lPTweQV_jZ_PKWN07omBhKsEPlMANRwCQWpR7cZmfHnGxIseFEagFM8O0YlZ_oFZ7UZVKDXXEVDC9JdPmY9oQGn5gpzU3X8FVZrnFjQF7jDVOVyG29sasED0s-R-8mm6buI29lsSs8JgHia4S42AXEWhlAriKF6VrN9VWJXh5VJFROWLvpbQk-YmeGpepuVaV8fzMaUIOYyx0Z_BXbdfUpWnDI17PqQzHwhnZIGTauml0CO21SYeZUy9mzYxjk_Hf_Ib0oGKH1OdJi1qbE9oMnXKznTQE8_9J8TnpY9GyINd-CTotiqMkGz1cW7hwqqOu7Tsxyl4jWCrYESPkqpU6XFkRAvfMyl_hnr70SczFmh9EL5hD9BhksxHRFSB9nqTSHYQvF1G3zsvev-pB4VJweQW5CDOnDRU6iqta_xpW463Mr4nqPzV9kRsSlk=w400-h380-p-k-nu-ft"
+                    /> -->
+
+                    <!-- <div class="box-content">
+                        <div class="inner-content">
+                            <span class="tittle">Hi</span>
+                            <span class="post">👋</span>
+                        </div>
+                    </div> -->
+                </div>
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item text-center"><a class="nav-link js-scroll-trigger" style="border-radius: 30px"
+                        href="#page-top">About</a></li>
+                <li class="nav-item text-center"><a class="nav-link js-scroll-trigger" style="border-radius: 30px;"
+                        href="#experience">Experience</a></li>
+                <li class="nav-item  text-center"><a class="nav-link js-scroll-trigger" style="border-radius: 30px;"
+                        href="#education">Education</a></li>
+                <li class="nav-item text-center"><a class="nav-link js-scroll-trigger" style="border-radius: 30px;"
+                        href="#news">Latest News</a></li>
+                <li class="nav-item text-center"><a class="nav-link js-scroll-trigger" style="border-radius: 30px;"
+                        href="#publications">Publications</a></li>
+                <li class="nav-item text-center"><a class="nav-link js-scroll-trigger" style="border-radius: 30px;"
+                        href="#awards">Awards</a></li>
+                <li class="nav-item text-center"><a class="nav-link js-scroll-trigger" style="border-radius: 30px;"
+                        href="#contact">Contact</a></li>
+                <li style="padding-top: 3rem"> </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container-fluid p-0">
+
+        <section class="resume-section" id="about">
+            <div class="resume-section-content">
+                <h1 class="text-primary-name">
+                    Duy Tran Thanh
+                    <!-- <span class="text-secondary">Tran Thanh</span> -->
+                </h1>
+                <div class="running-title subheading mb-5 ml2" style="color: #FF0000">
+                    Ph.D in Deep Learning - Computer Vision
+                </div>
+                <p class="lead mb-5">Duy was born in North Vietnam 🇻🇳 and can speak Vietnamese, English, Chinese.</p>
+                <p class="lead mb-5">In 2016, he received a B. E. with an Honor Reward in Ho Chi Minh University of
+                    Technology and Education, Vietnam.
+                </p>
+                <p class="lead mb-5">From 2017 to 2020, he worked as a Sr. Fullstack Developer at Robert Bosch GmbH, Ho
+                    Chi Minh city, Vietnam.
+                </p>
+                <p class="lead mb-5">In 2020, he joined
+                    <b><a href="https://visionlab.seoultech.ac.kr" target="_blank" style="color: #FF0000
+                        ">Machine Vision Lab
+                        </a></b>
+                    at Seoul National University of Science and Technology, where he is currently pursuing
+                    Ph.D degree under the supervision of
+                    <b><a href="https://gsp.seoultech.ac.kr/hcm/plugin/prof2/detail.jsp?menu=9122&lang=en&id=02567"
+                            target="" style="color: #FF0000">
+                            Prof. Kang Byeongkeun.</a></b>
+                    <!-- <button class="w2ui-btn" onclick="popup()">Open Popup</button> -->
+                </p>
+                <div class="lead mb-5">
+                    <a class="text-primary-name" href="#" style="padding-right: 1rem">[Google Scholar]</a>
+                    <a class="text-primary-name" href="https://www.linkedin.com/in/duytranthanh" arget="_blank"
+                        style="padding-right: 1rem">[Linkedin]</a>
+                    <a class="text-primary-name" href="https://github.com/bradduy" target="_blank"
+                        style="padding-right: 1rem">[Github]</a>
+                    <a class="text-primary-name"
+                        href="https://drive.google.com/file/d/1YTLcK-Q3KcBhzy_ONPyTy8a0cQSgX8Vz/view?usp=sharing"
+                        target="_blank" style="padding-right: 1rem; padding-right: 1rem">[CV]</a>
+                    <a class="text-primary-name" href="mailto:bradduy95@gmail.com">[Email]</a>
+
+                </div>
+
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Experience -->
+        <section class="resume-section" id="experience">
+            <div class="resume-section-content">
+                <h2 class="mb-5 text-white">Experience</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Senior Fullstack Developer</h3>
+                        <div class="subheading mb-3">Robert Bosch GmbH</div>
+                        <p>I worked in many Bosch projects over the world, which were built from scratch. It can be
+                            described as follows:</p>
+
+                        <p>Bosch in Germany 🇩🇪, I was a full-stack developer using:</p>
+                        <ul>
+                            <li>HTML/CSS, Angular 7, unit test with Jasmine</li>
+                            <li>NGRX state management</li>
+                            <li>Java 8, Spring Boot framework, Hibernate, unit test with Mockito, Swagger</li>
+                            <li>Oracle</li>
+                            <li>Scrum</li>
+                            <li>Postman</li>
+                        </ul>
+
+                        <p>Bosch in Singapore 🇸🇬, I was a full-stack developer using:</p>
+                        <ul>
+                            <li>HTML/CSS, Angular 7, unit test with Jasmine</li>
+                            <li>Java 8, Spring Boot framework, Hibernate, unit test with Mockito, Swagger</li>
+                            <li>Oracle</li>
+                            <li>Scrum</li>
+                            <li>Postman, SoapAPI, C# for testing</li>
+                        </ul>
+
+                        <p> Bosch in Germany 🇩🇪 & India 🇮🇳, I was a backend developer using:</p>
+                        <ul>
+                            <li>Java 8, Spring Boot framework, Hibernate, unit test with Mockito, Swagger</li>
+                            <li>MongoDB</li>
+                            <li>Microservice, Bosch cloud</li>
+                            <li>Scrum</li>
+                            <li>Postman</li>
+                        </ul>
+
+                        <p>Bosch in Vietnam 🇻🇳, I was a frontend developer using: </p>
+                        <ul>
+                            <li>HTML/CSS, Javascript, Jquery</li>
+                            <li>Scrum</li>
+                        </ul>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">Sep 2018 - Sep 2020</span></div>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Web Developer</h3>
+                        <div class="subheading mb-3">TMA Solutions</div>
+                        <p>We solved issues and developed more features/functionalities in user's application</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">July 2017 - July 2018</span></div>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Engineer</h3>
+                        <div class="subheading mb-3">Air Liquide</div>
+                        <p>I worked as an engineer in Oil & Gas company</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">Sep 2016 - June 2017</span></div>
+                </div>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Education-->
+        <section class="resume-section" id="education">
+            <div class="resume-section-content">
+                <h2 class="mb-5 text-white">Education</h2>
+
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0"> Seoul National University of Science and Technology</h3>
+                        <div class="subheading mb-3">Doctorate</div>
+                        <p>Computer Vision - Machine Learning - Artificial Intelligence</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">Sep 2020 - Present</span></div>
+                </div>
+
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Ho Chi Minh University of Technology and Education</h3>
+                        <div class="subheading mb-3">Bachelor</div>
+                        <p>Engineering</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">Sep 2013 - Sep 2016</span></div>
+                </div>
+
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Latest News-->
+        <section class="resume-section" id="news">
+            <div class="resume-section-content">
+                <h2 class="mb-5 text-white ml9">
+                    <span class="text-wrapper">
+                        <span class="letters" style="color: 28a745; font-weight: 650;">Latest News</span>
+                    </span>
+                </h2>
+                <div class="d-flex flex-column flex-md-row mb-5" style="padding: 2rem">
+                    <div class="flex-shrink-0-new"><span class="text-primary">Sep 2020 - Dec 2020</span></div>
+                    <div class="flex-grow-1-new">
+                        <p>We successfully delivered the project: <b><i>"AI-based Object Detection and Tracking for ROI
+                                    selection"</i></b>, Electronics and Telecommunications Research Institute (ETRI)</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <hr class="m-0" />
+        <!-- Publications-->
+        <section class="resume-section" id="publications">
+            <div class="resume-section-content">
+                <h2 class="mb-5 text-white"><span style="color: 28a745">Publications</span></h2>
+                <p>I'll update when I have my papers 😁</p>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Awards-->
+        <section class="resume-section" id="awards">
+            <div class="resume-section-content">
+                <h2 class="mb-5 text-white"><span style="color: 28a745">Awards & Certifications</span></h2>
+                <ul class="fa-ul mb-0 text-warning">
+                    <li>
+                        <span class="fa-li"><i class="fas fa-trophy"></i></span>
+                        2020 - ETM Department, Bosch Spot Awards
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-trophy"></i></span>
+                        2019 - ETM Department, Bosch Spot Awards
+                    </li>
+                    <img style="width: 15rem; height:20rem; border-radius: 2rem; padding-top: 1rem"
+                        src="assets/img/igpm.jpg" alt="" />
+                </ul>
+            </div>
+            <hr class="m-0" />
+        </section>
+        <!-- Contact-->
+        <section class="resume-section" id="contact">
+            <div class="resume-section-content">
+
+                <h2 class="mb-5 text-white"><span style="color: 28a745">Contact</span></h2>
+
+                <div class="d-flex flex-column flex-md-row mb-5-5" style="padding: 2rem">
+                    <div class="flex-shrink-0-new"><span class="text-primary"
+                            style="padding-right: 1.2rem">Email:</span></div>
+                    <div class="flex-grow-1-new">
+                        <p>bradduy95@gmail.com</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-md-row mb-5-5" style="padding: 2rem">
+                    <div class="flex-shrink-0-new"><span class="text-primary">Address:</span></div>
+                    <div class="flex-grow-1-new">
+                        <p>Machine Vision Lab, ChangHak hall (Building#3),
+                            <br> Seoul National University of Science and
+                            Technology, 232 Gongneung-ro, Nowon-gu, Seoul, 01811, Korea.
+                            <br> (01811) 서울시 노원구 공릉로 232 서울과학기술대학교, 창학관(#3).
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center logo">
+                    <a class="nav-link-logo js-scroll-trigger" style="border-radius: 30px;" href="#page-top">
+                        <img style="width: 7rem; height:7rem; border-radius: 5rem;" src="assets/img/logo.jpg" alt="" />
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
