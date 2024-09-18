@@ -1,107 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Do You Love Me?</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
-
-    .container {
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    h1 {
-      margin-top: 0;
-    }
-
-    .buttons {
-      margin-top: 20px;
-    }
-
-    button {
-      font-size: 16px;
-      padding: 10px 20px;
-      margin: 0 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .yes-btn {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    .no-btn {
-      background-color: #f44336;
-      color: white;
-    }
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đào tạo AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        .description {
+            display: none;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .description.show {
+            display: block;
+        }
+        .description h4 {
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bé Thuỷ có yêu anh không?</h1>
-    <div class="buttons">
-      <button class="yes-btn">Có</button>
-      <button class="no-btn">Không</button>
+
+<div class="container" >
+    <h2 style="text-align: center">DỰ ÁN ĐÀO TẠO KỸ SƯ AI CHO NGƯỜI VIỆT 🇻🇳 </h2>
+
+    <h5>[NEWs] Khóa khai giảng tháng 10, 2024: còn 2 slot.</h5>
+
+    <button class="button" onclick="toggleDescription('mentor')">MENTOR</button>
+    <div id="mentor" class="description">
+        <h4>Topic: AI/Machine Learning/Deep Learning/Large Language Models/GenAI</h4>
+        <p>Mục tiêu (chung):</p>
+        <ul>
+            <li>Phát triển kỹ năng và tư duy LẬP TRÌNH.</li>
+            <li>Phân tích và bổ sung kiến thức TOÁN vào xử lý, khai thác dữ liệu.</li>
+            <li>Học hỏi KINH NGHIỆM từ chuyên gia trong lĩnh vực AI.</li>
+            <li>Hỗ trợ và định hướng mục tiêu sự nghiệp sau khi kết thúc khóa.</li>
+        </ul>
+
+        <p>Mục tiêu (riêng):</p>
+        <p style="font-style: italic;">Kiến thức sẽ được điều chỉnh đề phù hợp với background và định hướng của từng cá nhân.</p>
+        <ul>
+            <li>Tập trung vào ĐỊNH HƯỚNG của mentee (Kỹ sư hoặc Nhà khoa học).</li>
+            <li>Chia sẻ và cung cấp kiến thức CẦN THIẾT nếu bạn muốn học Master/PhD.</li>
+            <li>Luyên tập kỹ năng NGHIÊN CỨU và PHÂN TÍCH giải quyết vấn đề bằng AI.</li>
+            <li>Tập trung vào lõi (core) của các mô hình AI theo mục tiêu của mentee.</li>
+            <li>Cập nhật công nghệ theo nhu cầu và xu hướng của thị trường.</li>
+        </ul>
     </div>
-  </div>
 
-  <script>
-const yesBtn = document.querySelector('.yes-btn');
-const noBtn = document.querySelector('.no-btn');
-const messageContainer = document.createElement('div');
-messageContainer.classList.add('message-container');
-messageContainer.style.marginTop = '20px';
-messageContainer.style.color = 'red';
-messageContainer.style.fontSize = '24px';
-document.querySelector('.container').appendChild(messageContainer);
+    <div style="text-align: center">
+        <p>Gửi email cho mình để trao đổi thông tin/chi phí (hợp lý cho sinh viên) trước khi đăng kí.</p>
+        <p>Email: 
+            <a href="mailto:braddụy95@gmail.com">bradduy95@gmail.com</a>
+        </p>
+        <h6><p style="font-style: italic; text-align: center">CHỈ TRẢ LỜI EMAIL, KHÔNG TRẢ LỜI TIN NHẮN CÁ NHÂN.</h6>
 
-yesBtn.addEventListener('click', () => {
-  messageContainer.style.color = 'red';
-  messageContainer.textContent = 'Anh cũng yêu em nhiều lắm. Saranghae!!!';
-});
+    </div>
 
-let moveCount = 0;
-let cryCount = 0;
-let noButtonSize = 1;
-let yesButtonSize = 1;
+</div>
 
-noBtn.addEventListener('click', (event) => {
-  if (moveCount < 2) {
-    noBtn.style.transform = `translateY(${event.clientY * 0.5}px)`;
-    moveCount++;
-  } else if (cryCount < 1) {
-    messageContainer.textContent = 'Anh không tin! Chắc e nhầm. Nhấn xanh mới đúng.';
-    messageContainer.style.color = 'red';
-    cryCount++;
-    noButtonSize *= 0.01; // Decrease the size of the "No" button
-    yesButtonSize *= 2; // Increase the size of the "Yes" button
-    noBtn.style.fontSize = `${noButtonSize * 1}px`; // Update the font size of the "No" button
-    yesBtn.style.fontSize = `${yesButtonSize * 50}px`; // Update the font size of the "Yes" button
-  	noBtn.style.transform = `translateY(0)`;
-  } else {
-    messageContainer.textContent = 'Đừng cố chấp nữa.';
-    messageContainer.style.color = 'blue';
-    noBtn.style.display = 'none'; // Hide the "No" button
-    yesButtonSize *= 1.2; // Increase the size of the "Yes" button
-    yesBtn.style.fontSize = `${yesButtonSize * 16}px`; // Update the font size of the "Yes" button
-  }
-});
-  </script>
+<script>
+    function toggleDescription(id) {
+        var x = document.getElementById(id);
+        x.classList.toggle("show");
+    }
+</script>
+
 </body>
 </html>
