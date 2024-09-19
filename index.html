@@ -33,6 +33,19 @@
         .button:hover {
             background-color: #3e8e41;
         }
+        .button_red {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #df1f1f;
+            color: #fff;
+            font-size: 16px;
+        }
+        .button_red:hover {
+            background-color: #df1f1f;
+        }
         .description {
             display: none;
             margin: 10px;
@@ -54,9 +67,15 @@
 <div class="container" >
     <h2 style="text-align: center">DỰ ÁN ĐÀO TẠO KỸ SƯ AI CHO NGƯỜI VIỆT 🇻🇳 </h2>
     <h3 style="text-align: center">TỪ NGHIÊN CỨU SINH - TIẾN SĨ AI</h3>
+    <h5 style="text-align: center">ĐẠI HỌC CÔNG NGHỆ QUỐC GIA SEOUL</h5>
 
-    <h5>[NEWS] Khóa Mentor 1-1 cuối năm 2024 còn <b style="color: red;">2</b>/3 slot.</h5>
+    <h5>[NEWS] Khóa Mentor 1-1 cuối năm 2024 về AI còn <b style="color: red;">2</b>/3 slot.</h5>
     <h5>[NEWS] Kick off dự án Mentor 1-1 (1 Mentor - 1 Mentee).</h5>
+
+    <button class="button_red" style="text-align: center" onclick="toggleDescription('goal')">MỤC TIÊU DỰ ÁN</button>
+    <p style="font-style: italic;" id="goal" class="description">
+        Xây dựng network giữa các kỹ sư, thạc sĩ, tiến sĩ, giáo sư người Việt Nam đang làm việc trong và ngoài nước.
+    </p>
 
     <button class="button" onclick="toggleDescription('mentor')">MENTOR 1-1</button>
     <div id="mentor" class="description">
@@ -79,14 +98,13 @@
             <li>Cập nhật công nghệ theo <b style="color: red;">XU HƯỚNG</b> của thị trường.</li>
         </ul>
     </div>
-
+    
     <div style="text-align: center">
         <p>Gửi email cho mình để trao đổi thông tin/chi phí (hợp lý cho sinh viên) trước khi đăng kí.</p>
         <p>Email: 
             <a href="mailto:braddụy95@gmail.com">bradduy95@gmail.com</a>
         </p>
         <h6><p style="font-style: italic; text-align: center">CHỈ TRẢ LỜI EMAIL, KHÔNG TRẢ LỜI TIN NHẮN CÁ NHÂN.</h6>
-
     </div>
 
 </div>
