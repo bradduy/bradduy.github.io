@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đào tạo AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        .button_red {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #df1f1f;
+            color: #fff;
+            font-size: 16px;
+        }
+        .button_red:hover {
+            background-color: #df1f1f;
+        }
+        .description {
+            display: none;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .description.show {
+            display: block;
+        }
+        .description h4 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" >
+    <h2 style="text-align: center">DỰ ÁN ĐÀO TẠO KỸ SƯ AI CHO NGƯỜI VIỆT 🇻🇳 </h2>
+    <h3 style="text-align: center">TỪ NGHIÊN CỨU SINH - TIẾN SĨ AI</h3>
+    <h5 style="text-align: center">ĐẠI HỌC CÔNG NGHỆ QUỐC GIA SEOUL</h5>
+
+    <!-- <h5>[NEWS] Khóa Mentor 1-1 cuối năm 2024 về AI còn <b style="color: red;">2</b>/3 slot.</h5> -->
+    <h5>[NEWS] Kick off dự án Mentor 1-1 (1 Mentor - 1 Mentee).</h5>
+
+    <button class="button_red" style="text-align: center" onclick="toggleDescription('goal')">MỤC TIÊU DỰ ÁN</button>
+    <p style="font-style: italic;" id="goal" class="description">
+        Xây dựng network giữa các kỹ sư, thạc sĩ, tiến sĩ, giáo sư người Việt Nam đang làm việc trong và ngoài nước.
+    </p>
+
+    <button class="button" onclick="toggleDescription('mentor')">MENTOR 1-1</button>
+    <div id="mentor" class="description">
+        <h4>TOPIC: AI/ Machine Learning/ Deep Learning/ Large Language Models/ GenAI</h4>
+        <p>Mục tiêu chung:</p>
+        <ul>
+            <li>Phát triển kỹ năng và tư duy <b style="color: red;">LẬP TRÌNH</b>.</li>
+            <li>Cung cấp kiến thức <b style="color: red;">TOÁN HỌC</b> vào xử lý và phân tích dữ liệu.</li>
+            <li>Làm việc với <b style="color: red;">SIDE PROJECT</b> thực tế trong suốt quá trình hướng dẫn.</li>
+            <li>Hướng dẫn <b style="color: red;">TRAINING/ TESTING/ DEPLOY</b> AI models trên private datasets.</li>
+        </ul>
+
+        <p>Mục tiêu <b style="color: red;">cá nhân hóa:</b></p>
+        <p style="font-style: italic;">Kiến thức sẽ được điều chỉnh đề phù hợp với background và định hướng của từng cá nhân.</p>
+        <ul>
+            <li><b style="color: red;">ĐIỀU CHỈNH</b> kiến thức phù hợp với nền tảng và định hướng của mentee.</li>
+            <li>Xây dựng nền móng <b style="color: red;">NGHIÊN CỨU</b> AI papers và kỹ năng <b style="color: red;">PHÂN TÍCH</b> giải quyết vấn đề bằng AI.</li>
+            <li>Hiểu rõ <b style="color: red;">THUẬT TOÁN (CORE)</b> của AI models để phát triển trong các công ty product (Singapore/US/Germany).</li>
+            <li>Cập nhật framework theo <b style="color: red;">XU HƯỚNG</b> của thị trường.</li>
+        </ul>
+    </div>
+    
+    <div style="text-align: center">
+        <p>Gửi email cho mình để trao đổi thông tin/chi phí (hợp lý cho sinh viên) trước khi đăng kí.</p>
+        <p>Email: 
+            <a href="mailto:braddụy95@gmail.com">bradduy95@gmail.com</a>
+        </p>
+        <h6><p style="font-style: italic; text-align: center">CHỈ TRẢ LỜI EMAIL, KHÔNG TRẢ LỜI TIN NHẮN CÁ NHÂN.</h6>
+    </div>
+
+</div>
+
+<script>
+    function toggleDescription(id) {
+        var x = document.getElementById(id);
+        x.classList.toggle("show");
+    }
+</script>
+
+</body>
+</html>
