@@ -1,18 +1,280 @@
-<!doctype html>
-<title>Site Maintenance</title>
-<style>
-  body { text-align: center; padding: 150px; }
-  h1 { font-size: 50px; }
-  body { font: 20px Helvetica, sans-serif; color: #333; }
-  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-  a { color: #dc8100; text-decoration: none; }
-  a:hover { color: #333; text-decoration: none; }
-</style>
+<html>
 
-<article>
-    <h1>We&rsquo;ll be back soon!</h1>
-    <div>
-        <p style="font-size: 23px;">"Do hạn chế về thời gian, tôi buộc phải tạm dừng chương trình mentorship 1-1 trong thời gian này. Tôi đang nỗ lực tìm giải pháp để cân bằng giữa công việc cá nhân và việc hỗ trợ các bạn trong tương lai gần. Cảm ơn sự kiên nhẫn và ủng hộ của các bạn, tôi sẽ cố gắng mở lại chương trình sớm nhất có thể."</p>
-        <p style="font-size: 23px;">&mdash; Brad Duy</p>
-    </div>
-</article>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+
+    <script defer src="index.js"></script>
+    <script init src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.3/popup.min.js"></script>
+
+    <script type="text/javascript">
+        window.tailwind.config = {
+            darkMode: "selector",
+            theme: {
+                extend: {
+                    colors: {
+                        text: "var(--text)",
+                        background: "var(--background)",
+                        foreground: "var(--primary-foreground)",
+                        footer: "var(--footer)",
+                        "text-secondary": "var(--gray)",
+                        tertiary: "var(--yellow)",
+                        "light-gray": "var(--light-gray)",
+                        error: "var(--red-1)",
+                        primary: {
+                            DEFAULT: "var(--primary)",
+                        },
+                    },
+                    animation: {
+                        "fade-in": "fade-in 2s ease-in-out",
+                    },
+                },
+                backgroundImage: {
+                    "button-primary":
+                        "linear-gradient(var(--red-1) 100%, var(--red-2) 100%)",
+                    "button-secondary":
+                        "linear-gradient(var(--blue-1) 100%, var(--blue-2) 100%)",
+                    "dark-divider": "radial-gradient(var(--text), transparent 80%)",
+                    divider: "radial-gradient(var(--primary), transparent 80%)",
+                    "dark-mask": "radial-gradient(transparent, #000000 80%)",
+                    mask: "radial-gradient(transparent, #ffffff 80%)",
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+        :root {
+          --text: #ffffff;
+          --foreground: 240 10% 3.9%;
+          --red-1: #ed1d49;
+          --red-2: #aa0e30;
+          --blue-1: #1398f9;
+          --blue-2: #067bcf;
+          --gray: #717d8a;
+          --light-gray: #f1f1f1;
+          --yellow: #ffb500;
+          --primary: #000000;
+          --primary-foreground: #0c1620;
+          --footer: #000e12;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Đào Tạo Kỹ Sư AI Cho Người Việt</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    </head>
+
+    <body class="bg-text text-primary overflow-x-hidden transition ease duration-300 dark:bg-primary dark:text-text">
+        <header
+            class="text-center px-6 py-4 md:px-20 md:py-16 relative bg-text bg-transparent transtion ease duration-300">
+            <img id="header-bg" src="./images/light_header_bg.jpg" alt="header background"
+                class="absolute top-0 left-0 bottom-0 h-full w-full opacity-30 object-cover animate-pulse duration-500" />
+            <div class="z-[2] relative">
+                <div class="mb-10 flex gap-4 flex-col md:flex-row items-center justify-center">
+                    <h1 class="text-3xl font-bold uppercase">
+                        Đào Tạo AI Cho Người Việt
+                    </h1>
+                    <span>
+                        <img src="./images/vietnam_flag.png" alt="vietnam flag icon" class="h-8 w-8" />
+                    </span>
+                </div>
+                <p class="text-xl mb-3 capitalize font-bold">
+                    Từ Nghiên Cứu Sinh - Tiến Sĩ AI
+                </p>
+            </div>
+            <p class="text-md mb-4">Đại Học Công Nghệ Quốc Gia Seoul</p>
+            </div>
+        </header>
+
+        <!-- <p class="text-xl mb-3 capitalize font-bold">
+            Thông tin giảng viên: Duc Tran - AI Researcher
+            </p>
+          </p>
+          <ul>
+            <li>Song bằng: Master of AI (Đại Học Công Nghệ Quốc Gia Seoul)</li>
+            <li>Master of Data Science (Đại Học Bách Khoa Hồ Chí Minh)</li>
+            <li>Kỹ Sư tài năng Việt Pháp (Đại Học Bách Khoa Hồ Chí Minh)</li>
+        </ul> -->
+
+        <main class="py-4 px-6 md:py-6 md:px-20 min-h-[calc(100%-172px-72px)] animate-fade-in">
+
+            <!-- introduce -->
+            <h2
+                class="text-lg mx-auto md:mx-0 font-semibold mt-8 bg-transparent border border-primary text-primary rounded-3xl w-fit px-6 py-3 hover:bg-primary hover:text-text transition ease-in-out dark:border-text dark:text-text dark:hover:bg-text dark:hover:text-primary">
+                &#9758; &nbsp; Giảng Viên - Đức Trần
+            </h2>
+            <div
+                class="bg-text p-4 rounded-lg mt-8 flex gap-0 items-center justify-between dark:bg-primary transition ease duration-300">
+                <ul class="list-disc min-w-[100%] lg:min-w-[65%] md:min-w-[50%]">
+                    <li class="text-md">
+                        <b>Master of Artificial Intelligence,</b> Đại Học Công Nghệ Quốc Gia Seoul.
+                    </li>
+                    <li class="text-md mt-2">
+                        <b>Master of Data Science,</b> Đại Học Bách Khoa Hồ Chí Minh.
+                    </li>
+                    <li class="text-md mt-2">
+                        <b>Kỹ Sư tài năng </b> của chương trình Việt Pháp, Đại Học Bách Khoa Hồ Chí Minh.
+                    </li>
+                    <li class="text-md mt-2">
+                        <b>Công bố 3D AI model tại hội nghị Top Tiers thế giới </b> ở Melbourne, 2024 - <a
+                            href="https://dl.acm.org/doi/10.1145/3664647.3680667" target="_blank"
+                            class="text-primary hover:bg-primary hover:text-text">ACM Multimedia</a>.
+                    </li>
+                </ul>
+                <div
+                    class="relative overflow-hidden shrink-0 aspect-[2/1] rounded-2xl md:min-w-[400px] max-h-[250px] hidden md:block 2xl:translate-x-36 fade-in">
+                    <img id="target-bg" src="./images/acmm.png" alt="target background"
+                        class="w-full h-auto rounded-2xl fade-in" width="00" />
+                </div>
+            </div>
+
+            <!-- introduce -->
+            <!-- Purpose -->
+            <h2
+                class="text-lg mx-auto md:mx-0 font-semibold mt-8 bg-transparent border border-primary text-primary rounded-3xl w-fit px-6 py-3 hover:bg-primary hover:text-text transition ease-in-out dark:border-text dark:text-text dark:hover:bg-text dark:hover:text-primary">
+                &#9758; &nbsp; Mục tiêu của dự án
+            </h2>
+            <div
+                class="bg-text p-4 rounded-lg mt-8 flex gap-0 items-center justify-between dark:bg-primary transition ease duration-300">
+                <ul class="list-disc min-w-[100%] lg:min-w-[65%] md:min-w-[50%]">
+                    <li class="text-md">
+                        <b>Trang bị kiến thức</b> nền tảng để lập trình Machine
+                        Learning, Deep Learning, AI trong NLP và Computer Vision.
+                    </li>
+                    <li class="text-md mt-2">
+                        <b>Trở thành AI Engineers/Researchers</b> bằng cách tư duy giải quyết vấn đề với công trình khoa
+                        học hàng đầu thế giới.
+                    </li>
+                    <li class="text-md mt-2">
+                        <b>Tối ưu hóa models</b> không chỉ sử dụng prompt để ứng dụng AI cho cá nhân và trong doanh
+                        nghiệp.
+                    </li>
+                    <li class="text-md mt-2">
+                        <b>Build up profile</b> với dự án AI thực tế.
+                    </li>
+                    <li class="text-md mt-2">
+                        <b>Kết nối cộng đồng AI</b> giữa các chuyên gia, doanh nghiệp và cộng đồng
+                        AI tại Việt Nam, giúp họ tiếp cận những cơ hội nghề nghiệp.
+                    </li>
+                </ul>
+                <div
+                    class="relative overflow-hidden shrink-0 aspect-[2/1] rounded-2xl md:min-w-[400px] max-h-[250px] hidden md:block 2xl:translate-x-36 fade-in">
+                    <img id="target-bg" src="./images/light_target_bg.jpg" alt="target background"
+                        class="w-full h-auto rounded-2xl fade-in" width="600" />
+                    <div
+                        class="rounded-2xl bg-mask dark:bg-dark-mask top-0 bottom-0 left-0 right-0 absolute w-full h-full z-[2] fade-in">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Common Purpose -->
+
+            <hr
+                class="w-full h-[1px] my-12 bg-divider dark:bg-dark-divider opacity-35 border-none transition ease duration-300" />
+
+            <!-- Method -->
+            <div id="method" class="fade-in-content opacity-0">
+                <h2
+                    class="text-lg font-semibold mx-auto md:mx-0 bg-transparent border border-primary text-primary rounded-3xl w-fit px-6 py-3 hover:bg-primary hover:text-text transition ease-in-out dark:border-text dark:text-text dark:hover:bg-text dark:hover:text-primary">
+                    &#10003; &nbsp; Lộ trình học
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <div class="bg-light-gray dark:bg-foreground p-4 rounded-lg shadow-lg transition duration-150 ease-in-out hover:scale-105 duration-500 cursor-pointer"
+                        id="purpose1">
+                        <img src="./images/purpose1_bg.jpg" alt="Image 1" class="rounded-lg mb-2 w-full object-cover"
+                            height="200" />
+                        <p class="text-primary dark:text-text text-center mt-5 font-bold">
+                            Khóa Entry-Level
+                        </p>
+                    </div>
+
+                    <div class="bg-light-gray dark:bg-foreground p-4 rounded-lg shadow-lg transition duration-150 ease-in-out hover:scale-105 duration-500 cursor-pointer"
+                        id="purpose2">
+                        <img src="./images/purpose2_bg.png" alt="Image 2" class="rounded-lg mb-2 w-full object-cover"
+                            height="200" />
+                        <p class="text-primary dark:text-text text-center mt-5 font-bold">
+                            Khóa Engineer
+                        </p>
+                    </div>
+
+                    <div class="bg-light-gray dark:bg-foreground p-4 rounded-lg shadow-lg transition duration-150 ease-in-out hover:scale-105 duration-500 cursor-pointer"
+                        id="purpose3">
+                        <img src="./images/purpose3_bg.jpg" alt="Image 3" class="rounded-lg mb-2 w-full object-cover"
+                            height="200" />
+                        <p class="text-primary dark:text-text text-center mt-5 font-bold">
+                            Khóa Researcher
+                        </p>
+                    </div>
+                </div>
+                <!-- Method -->
+            </div>
+<!-- 
+            <div class="w-full max-w-5xl bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-center text-2xl font-semibold mb-4">ĐỐI TÁC</h2>
+                <div class="relative overflow-hidden">
+                    <button id="prev"
+                        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md p-2 rounded-full z-10">&#10094;</button>
+                    <div id="carousel" class="flex space-x-6 overflow-x-auto scrollbar-hide p-4">
+                        <img src="logo1.png" alt="Digiworld" class="h-16">
+                        <img src="logo2.png" alt="SKG" class="h-16">
+                        <img src="logo3.png" alt="VETC" class="h-16">
+                        <img src="logo4.png" alt="MISA" class="h-16">
+                        <img src="logo5.png" alt="Cốc Cốc" class="h-16">
+                        <img src="logo6.png" alt="MOR" class="h-16">
+                        <img src="logo7.png" alt="VTI" class="h-16">
+                        <img src="logo8.png" alt="CMC Global" class="h-16">
+                        <img src="logo9.png" alt="FPT Information System" class="h-16">
+                        <img src="logo10.png" alt="HRI" class="h-16">
+                        <img src="logo11.png" alt="Hachinet" class="h-16">
+                        <img src="logo12.png" alt="VMO" class="h-16">
+                    </div>
+                    <button id="next"
+                        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md p-2 rounded-full z-10">&#10095;</button>
+                </div>
+            </div> -->
+        </main>
+
+        <footer
+            class="py-4 px-6 md:py-10 md:px-20 bg-light-gray dark:bg-footer text-center mt-8 fade-in-content opacity-0">
+            <!-- Contact Info -->
+            <h4 class="text-lg">Thông tin liên hệ</h4>
+            <hr
+                class="h-[1px] w-52 my-4 mx-auto bg-divider dark:bg-dark-divider opacity-35 border-none transition ease duration-300" />
+            <div class="text-base">
+                <p>
+                    &#9993; Email: <span><b>bradduy95@gmail.com</b></span>
+                </p>
+                <p class="text-sm mt-2">
+                    <i>
+                        <span>Tư vấn miễn phí, liên hệ qua Tiktok hoặc Linkedin. Đăng kí khóa học qua email.</span></i>
+                </p>
+            </div>
+            <!-- Contact Info -->
+        </footer>
+
+        <!-- Change Dark/Light Mode -->
+        <button id="change-mode"
+            class="fixed right-0 top-[25%] my-auto pl-1.5 pr-2 py-1.5 rounded-l-3xl bg-primary dark:bg-text z-[50] transition ease duration-300">
+            <span
+                class="rounded-full bg-text dark:bg-primary h-6 w-6 flex items-center justify-center transition ease duration-300"><img
+                    id="theme-icon" src="./images/moon-icon.svg" alt="theme icon" width="16" height="16"
+                    class="transition ease duration-300" /></span>
+        </button>
+        <!-- Change Dark/Light Mode -->
+    </body>
+
+    </html>
+</body>
+
+</html>
