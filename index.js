@@ -39,7 +39,7 @@ const rawData = {
     <p class="text-red-500 text-xl font-bold text-gray-900 dark:text-white">Bạn sẽ được:</p>
     <ul class="list-disc text-left">
         <li class="text-base">Xây dựng profile bằng dự án thực tế</li>
-        <li class="text-base">Biết cách dạy và tôi ưu tất cả các loại AI, không chỉ sử dụng câu lệnh prompt.</li>
+        <li class="text-base">Biết cách dạy và tối ưu tất cả các loại AI, không chỉ sử dụng câu lệnh prompt.</li>
         <li class="text-base text-red-500 font-bold">Giảm 10% khi đăng kí khóa tiếp theo.</li>
         <li class="text-base text-red-500 font-bold">Nhận 10% affiliate khi giới thiệu bạn bè thành công.</li>
         </ul>
@@ -80,6 +80,7 @@ const rawData = {
     <ul class="list-disc text-left">
         <li class="text-base">Được học đọc và cách nghiên cứu bài báo khoa học top hàng đầu thế giới </li>
         <li class="text-base">Được rèn luyện kỹ năng như một Thạc Sĩ.</li>
+        <li class="text-base">Tư duy và có thể startup về AI như DeepSeek (đùa thôi ít nhất đủ kiến thức thành fouder bên kỹ thuật).</li>
         <li class="text-base text-red-500 font-bold">Nhận 10% affiliate khi giới thiệu bạn bè thành công.</li>
     </ul>
 
@@ -87,7 +88,7 @@ const rawData = {
     <ul class="list-disc text-left">
         <li class="text-base"><b>Become a Researcher: </b>
             <ul class="list-inside list-disc">
-                <li>Có gì liên hệ qua mail, mệt quá hết viết nổi rồi</li>
+                <li>Chi tiết cứ liên hệ qua mail.</li>
             </ul>
         </li>
     </ul>
@@ -131,10 +132,10 @@ let popupConfig = {
 const popupTitle_entry = `<p class="text-xl">Dành cho Entry-level</>
   <hr class="h-[1.5px] w-full my-4 mx-auto bg-divider opacity-35 border-none" />`;
 
-const popupTitle_engineer = `<p class="text-xl">Khóa trở thành Engineer</>
+const popupTitle_engineer = `<p class="text-xl">Khóa trở thành AI Engineer</>
   <hr class="h-[1.5px] w-full my-4 mx-auto bg-divider opacity-35 border-none" />`;
 
-const popupTitle_researcher = `<p class="text-xl">Khóa trở thành Researcher</>
+const popupTitle_researcher = `<p class="text-xl">Khóa trở thành AI Researcher</>
   <hr class="h-[1.5px] w-full my-4 mx-auto bg-divider opacity-35 border-none" />`;
 
 // QUERY ELEMENTS
