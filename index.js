@@ -11,12 +11,12 @@ let isDarkMode = themeMode === "dark";
 // </li> */
 const rawData = {
     content1: ` 
-    <p class="text-red-500 text-xl font-bold text-gray-900 dark:text-white">Bạn sẽ được:</p>
+    <p class="text-red-500 text-left ext-xl font-bold text-gray-900 dark:text-white">BẠN SẼ ĐƯỢC:</p>
     <ul class="list-disc text-left">
         <li class="text-base">Thay vì chỉ lý thuyết, dùng toán để ứng dụng trong mọi ngành nghề, từ <strong>e-commerce, fintech, marketing, blockchain, đầu tư chứng khoán</strong> cho đến <strong>AI</strong>.</li>
         <li class="text-base">Biết thế nào khai thác dữ liệu một cách hiệu quả vì dữ liệu là "mỏ vàng".</li>
-        <li class="text-base text-red-500 font-bold">Giảm 10% khi đăng kí khóa tiếp theo.</li>
-        <li class="text-base text-red-500 font-bold">Nhận 10% affiliate khi giới thiệu bạn bè thành công.</li>
+        <li class="text-base"><div class="font-semibold text-red-500 inline">Giảm 10%</div> khi đăng kí khóa tiếp theo.</li>
+        <li class="text-base"><div class="font-semibold text-red-500 inline">Nhận 8% affiliates</div> với mỗi lượt giới thiệu thành công.</li>
     </ul>
 
     <ul class="list-disc text-left">
@@ -36,12 +36,12 @@ const rawData = {
     `,
     content2:
         `
-    <p class="text-red-500 text-xl font-bold text-gray-900 dark:text-white">Bạn sẽ được:</p>
+    <p class="text-red-500 text-left ext-xl font-bold text-gray-900 dark:text-white">BẠN SẼ ĐƯỢC:</p>
     <ul class="list-disc text-left">
         <li class="text-base">Xây dựng profile bằng dự án thực tế</li>
         <li class="text-base">Biết cách dạy và tối ưu tất cả các loại AI, không chỉ sử dụng câu lệnh prompt.</li>
-        <li class="text-base text-red-500 font-bold">Giảm 10% khi đăng kí khóa tiếp theo.</li>
-        <li class="text-base text-red-500 font-bold">Nhận 10% affiliate khi giới thiệu bạn bè thành công.</li>
+        <li class="text-base"><div class="font-semibold text-red-500 inline">Giảm 10%</div> khi đăng kí khóa tiếp theo.</li>
+        <li class="text-base"><div class="font-semibold text-red-500 inline">Nhận 8% affiliates</div> với mỗi lượt giới thiệu thành công.</li>
         </ul>
 
     <ul class="list-disc text-left">
@@ -76,22 +76,24 @@ const rawData = {
 
     `,
     content3: `
-    <p class="text-red-500 text-xl font-bold text-gray-900 dark:text-white">Bạn sẽ được:</p>
+    <p class="text-red-500 text-left ext-xl font-bold text-gray-900 dark:text-white">BẠN SẼ ĐƯỢC:</p>
     <ul class="list-disc text-left">
         <li class="text-base">Được học đọc và cách nghiên cứu bài báo khoa học top hàng đầu thế giới </li>
-        <li class="text-base">Được rèn luyện kỹ năng như một Thạc Sĩ.</li>
-        <li class="text-base">Tư duy và có thể startup về AI như DeepSeek (đùa thôi ít nhất đủ kiến thức thành fouder bên kỹ thuật).</li>
-        <li class="text-base text-red-500 font-bold">Nhận 10% affiliate khi giới thiệu bạn bè thành công.</li>
+        <li class="text-base">Được rèn luyện kỹ năng như một AI Researcher.</li>
+        <li class="text-base">Luyện tư duy startup như DeepSeek.</li>
+        <li class="text-base"><div class="font-semibold text-red-500 inline">Nhận 8% affiliates</div> với mỗi lượt giới thiệu thành công.</li>
     </ul>
 
 
     <ul class="list-disc text-left">
         <li class="text-base"><b>Become a Researcher: </b>
             <ul class="list-inside list-disc">
-                <li>Chi tiết cứ liên hệ qua mail.</li>
+                <li>Chi tiết liên hệ qua mail: <a href="mailto:bradduy95@gmail.com" class="text-blue-500 underline">📮: bradduy95@gmail.com</a>
+            </li>
             </ul>
         </li>
     </ul>
+    
     `
 
 }
