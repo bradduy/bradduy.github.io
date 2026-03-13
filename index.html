@@ -1,404 +1,799 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
-
-    <script defer src="index.js"></script>
-    <script init src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.3/popup.min.js"></script>
-
-    <script type="text/javascript">
-        window.tailwind.config = {
-            darkMode: "selector",
-            theme: {
-                extend: {
-                    colors: {
-                        text: "var(--text)",
-                        background: "var(--background)",
-                        foreground: "var(--primary-foreground)",
-                        footer: "var(--footer)",
-                        "text-secondary": "var(--gray)",
-                        tertiary: "var(--yellow)",
-                        "light-gray": "var(--light-gray)",
-                        error: "var(--red-1)",
-                        primary: {
-                            DEFAULT: "var(--primary)",
-                        },
-                    },
-                    animation: {
-                        "fade-in": "fade-in 2s ease-in-out",
-                    },
-                },
-                backgroundImage: {
-                    "button-primary":
-                        "linear-gradient(var(--red-1) 100%, var(--red-2) 100%)",
-                    "button-secondary":
-                        "linear-gradient(var(--blue-1) 100%, var(--blue-2) 100%)",
-                    "dark-divider": "radial-gradient(var(--text), transparent 80%)",
-                    divider: "radial-gradient(var(--primary), transparent 80%)",
-                    "dark-mask": "radial-gradient(transparent, #000000 80%)",
-                    mask: "radial-gradient(transparent, #ffffff 80%)",
-                },
-            },
-        };
-    </script>
-    <style type="text/tailwindcss">
-        @layer base {
-        :root {
-          --text: #ffffff;
-          --foreground: 240 10% 3.9%;
-          --red-1: #ed1d49;
-          --red-2: #aa0e30;
-          --blue-1: #1398f9;
-          --blue-2: #067bcf;
-          --gray: #717d8a;
-          --light-gray: #f1f1f1;
-          --yellow: #ffb500;
-          --primary: #000000;
-          --primary-foreground: #0c1620;
-          --footer: #000e12;
-        }
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duy Tran Thanh | Senior AI Engineer & PhD Candidate</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Đào Tạo Kỹ Sư AI Cho Người Việt</title>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    </head>
+  <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">[</span>DTT<span class="logo-bracket">]</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link nav-cta">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-    <body class="bg-text text-primary overflow-x-hidden transition ease duration-300 dark:bg-primary dark:text-text">
-        <header
-            class="text-center px-6 py-4 md:px-20 md:py-16 relative bg-text bg-transparent transtion ease duration-300">
-            <img id="header-bg" src="./images/light_header_bg.jpg" alt="header background"
-                class="absolute top-0 left-0 bottom-0 h-full w-full opacity-30 object-cover animate-pulse duration-500" />
-            <div class="z-[2] relative">
-                <div class="mb-10 flex gap-4 flex-col md:flex-row items-center justify-center">
-                    <h1 class="text-3xl font-bold uppercase">
-                        Đào Tạo AI Cho Người Việt
-                    </h1>
-                    <span>
-                        <img src="./images/vietnam_flag.png" alt="vietnam flag icon" class="h-8 w-8" />
-                    </span>
-                </div>
-                <p class="text-xl mb-3 capitalize font-bold">
-                    Từ Nghiên Cứu Sinh - Tiến Sĩ AI
-                </p>
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section id="hero">
+    <canvas id="neural-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        <span>Available for Collaboration</span>
+      </div>
+      <h1 class="hero-name reveal-up">
+        <span class="name-last">DUY TRAN</span>
+      </h1>
+      <div class="hero-title reveal-up">
+        <span class="title-static">Senior AI Engineer</span>
+        <span class="title-divider">·</span>
+        <span class="typewriter" id="typewriter"></span>
+      </div>
+      <p class="hero-desc reveal-up">
+        Architecting production-grade AI systems for <span class="gold">finance &amp; banking</span>.<br>
+        PhD Candidate in <span class="cyan">AI / Computer Vision</span> · Seoul, Republic of Korea.
+      </p>
+      <div class="hero-tags reveal-up">
+        <span class="tag tag-cyan"># Document Intelligence</span>
+        <span class="tag tag-gold"># Banking AI</span>
+        <span class="tag tag-cyan"># LLM Reasoning</span>
+        <span class="tag tag-gold"># Computer Vision</span>
+        <span class="tag tag-cyan"># Multi-Agent Systems</span>
+      </div>
+      <div class="hero-actions reveal-up">
+        <a href="#research" class="btn btn-primary">View Research</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-val" data-count="98">0</span><span class="hstat-unit">%</span><span
+          class="hstat-label">OCR Accuracy</span></div>
+      <div class="hstat-divider"></div>
+      <div class="hstat"><span class="hstat-val" data-count="80">0</span><span class="hstat-unit">%</span><span
+          class="hstat-label">AI Automation</span></div>
+      <div class="hstat-divider"></div>
+      <div class="hstat"><span class="hstat-val" data-count="100">0</span><span class="hstat-unit">K+</span><span
+          class="hstat-label">Docs / Year</span></div>
+      <div class="hstat-divider"></div>
+      <div class="hstat"><span class="hstat-val" data-count="7">0</span><span class="hstat-unit">+</span><span
+          class="hstat-label">Years Experience</span></div>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">// 01</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <p>
+            I am a <span class="gold">Senior AI Engineer</span> at <strong>OneMount</strong> and a
+            <span class="cyan">PhD Candidate in AI/Computer Vision</span> at Seoul National University
+            of Science and Technology, with a visiting research appointment at <strong>Chung-Ang University</strong>.
+          </p>
+          <p>
+            My work sits at the intersection of <span class="cyan">large language models</span>,
+            <span class="gold">document intelligence</span>, and production-scale systems —
+            delivering compliance-critical AI pipelines for Vietnam's leading banks including
+            <strong>Techcombank</strong>. I specialize in reasoning-first architectures,
+            multimodal understanding, and explainable AI for regulated industries.
+          </p>
+          <p>
+            Beyond banking, I conduct fundamental research in open-vocabulary 3D instance
+            segmentation, VLM-based perception, and multi-agent systems, with publications
+            in <span class="gold">Q1 international journals</span> and benchmarks surpassed at ICCV &amp; ICML.
+          </p>
+          <div class="about-links">
+            <a href="mailto:tranthanhduy279@gmail.com" class="about-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 7L2 7" />
+              </svg>
+              tranthanhduy279@gmail.com
+            </a>
+            <a href="#" class="about-link">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="#" class="about-link">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z" />
+              </svg>
+              Google Scholar
+            </a>
+          </div>
+        </div>
+        <div class="about-cards reveal-right">
+          <div class="acard acard-cyan">
+            <div class="acard-icon">⚡</div>
+            <div class="acard-title">AI Architecture</div>
+            <div class="acard-desc">Reasoning-first LLM pipelines with KV caching, FlashAttention, and production-grade
+              inference on H100 GPUs</div>
+          </div>
+          <div class="acard acard-gold">
+            <div class="acard-icon">🏦</div>
+            <div class="acard-title">Finance & Banking</div>
+            <div class="acard-desc">Compliance-critical Document AI for international money transfers, OCR, KIE, and
+              regulatory rule engines</div>
+          </div>
+          <div class="acard acard-cyan">
+            <div class="acard-icon">🔬</div>
+            <div class="acard-title">PhD Research</div>
+            <div class="acard-desc">Open-vocabulary 3D/2D instance segmentation, VLM alignment, and class-incremental
+              learning for robotics</div>
+          </div>
+          <div class="acard acard-gold">
+            <div class="acard-icon">🤖</div>
+            <div class="acard-title">Multi-Agent Systems</div>
+            <div class="acard-desc">Orchestrating specialized AI agents with LangGraph, RAG, and vector databases for
+              complex real-world workflows</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
+  <section id="experience" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">// 02</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <!-- OneMount -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot dot-gold"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <div class="tcard-company">OneMount</div>
+                <div class="tcard-role">Senior AI Engineer</div>
+              </div>
+              <div class="tcard-meta">
+                <span class="tcard-period">Jan 2026 – Present</span>
+                <span class="tcard-badge badge-gold">Current</span>
+              </div>
             </div>
-            <p class="text-md mb-4">Đại Học Công Nghệ Quốc Gia Seoul</p>
-            </div>
-        </header>
-
-        <main class="py-4 px-6 md:py-6 md:px-20 min-h-[calc(100%-172px-72px)] animate-fade-in">
-                        <!-- Slides -->
-                        <div class="max-w-2xl mx-auto">
-
-                            <div id="default-carousel" class="relative rounded-lg overflow-hidden shadow-lg" data-carousel="static">
-                                <!-- Carousel wrapper -->
-                                <div class="relative h-80 md:h-96" data-carousel-inner>
-                                    <!-- Item 1 -->
-                                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="images/thum1.png"
-                                            class="object-cover w-full h-full" alt="Slide 1">
-                                    </div>
-                                    <!-- Item 2 -->
-                                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="images/we.png"
-                                            class="object-cover w-full h-full" alt="Slide 2">
-                                    </div>
-                                    <!-- Item 3 -->
-                                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="images/phdd_light.png"
-                                            class="object-cover w-full h-full" alt="Slide 3">
-                                    </div>
-                                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="images/team.jpeg"
-                                            class="object-cover w-full h-full" alt="Slide 4">
-                                    </div>
-                                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="images/plan_light.png"
-                                            class="object-cover w-full h-full" alt="Slide 5">
-                                    </div>
-                                    <!-- <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src="images/brd.png"
-                                            class="object-cover w-full h-full" alt="Slide 5">
-                                    </div> -->
-
-                                </div>
-                                <!-- Slider indicators -->
-                                <div class="flex absolute bottom-5 left-1/2 z-30 -translate-x-1/2 space-x-2" data-carousel-indicators>
-                                    <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
-                                    <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
-                                    <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
-                                    <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
-                                    <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
-                                </div>
-                                <!-- Slider controls -->
-                                <button type="button"
-                                    class="flex absolute top-1/2 left-3 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition"
-                                    data-carousel-prev>
-                                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                    </svg>
-                                </button>
-                                <button type="button"
-                                    class="flex absolute top-1/2 right-3 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition"
-                                    data-carousel-next>
-                                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        
-                            <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-                        
-                        </div>
-                        <!-- Slides End-->
-            <!-- introduce -->
-            <h2
-                class="text-lg mx-auto md:mx-0 font-semibold mt-8 bg-transparent border border-primary text-primary rounded-3xl w-fit px-6 py-3 hover:bg-primary hover:text-text transition ease-in-out dark:border-text dark:text-text dark:hover:bg-text dark:hover:text-primary">
-                👨🏻‍🏫 Giảng Viên - Đức Trần
-            </h2>
-
-            <div
-                class="bg-text p-4 rounded-lg mt-8 flex gap-0 items-center justify-between dark:bg-primary transition ease duration-300">
-                <ul class="list-disc min-w-[100%] lg:min-w-[65%] md:min-w-[50%]">
-                    <li class="text-md">
-                        <b>Master of Artificial Intelligence,</b> Đại Học Công Nghệ Quốc Gia Seoul 🇰🇷
-                    </li>
-                    <li class="text-md mt-2">
-                        <b>Master 1</b>, Institut polytechnique de Grenoble 🇫🇷.
-                    </li>
-                    <li class="text-md mt-2">
-                        <b>Kỹ Sư Chất Lượng Cao </b> chương trình Việt Pháp, Đại Học Bách Khoa Hồ Chí Minh 🇻🇳.
-                    </li>
-                    <li class="text-md mt-2">
-                        Thành công công bố <b>3D AI model</b> tại 1 trong những hội nghị Top Tiers thế giới 2024 </b>-<a
-                            href="https://dl.acm.org/doi/10.1145/3664647.3680667" target="_blank"
-                            class="text-primary text-red-500 font-bold hover:bg-primary hover:text-text"> ACM
-                            Multimedia</a>, Melbourne.
-                    </li>
+            <div class="tcard-projects">
+              <div class="tproject">
+                <div class="tproject-name">TradeAI · Techcombank</div>
+                <ul class="tcard-bullets">
+                  <li>Led end-to-end design of compliance-critical <strong>Automatic Document Processing</strong> for
+                    banking, achieving <span class="gold">~98% OCR accuracy</span> with ChandraOCR + spatial grounding
+                  </li>
+                  <li>Architected <strong>Qwen3-30B</strong> long-context reasoning engine for document classification,
+                    sensitive information detection, and cross-field consistency on financial instruments</li>
+                  <li>Designed multi-layer validation framework: LLM reasoning + scalable rule-engine supporting
+                    <strong>hundreds of dynamic banking rules</strong>, deployed on NVIDIA H100 + Qdrant + GCP
+                  </li>
+                  <li>Serving <span class="cyan">~100,000 document-processing requests/year</span> with p95 latency &lt;
+                    5 minutes via FlashAttention, KV caching, Celery, Redis</li>
                 </ul>
-                <div
-                    class="relative overflow-hidden shrink-0 aspect-[2/1] rounded-2xl md:min-w-[400px] max-h-[250px] hidden md:block 2xl:translate-x-36 fade-in">
-                    <img id="acmm" src="./images/acmm.png" alt="target background"
-                        class="w-full h-auto rounded-2xl fade-in" width="00" />
-                </div>
-            </div>
-
-            <!-- introduce -->
-            <!-- Purpose -->
-            <h2
-                class="text-lg mx-auto md:mx-0 font-semibold mt-8 bg-transparent border border-primary text-primary rounded-3xl w-fit px-6 py-3 hover:bg-primary hover:text-text transition ease-in-out dark:border-text dark:text-text dark:hover:bg-text dark:hover:text-primary">
-                🥇 Mục tiêu
-            </h2>
-            <div
-                class="bg-text p-4 rounded-lg mt-8 flex gap-0 items-center justify-between dark:bg-primary transition ease duration-300">
-                <ul class="list-disc min-w-[100%] lg:min-w-[65%] md:min-w-[50%]">
-                    <li class="text-md">
-                        <b>Trang bị kiến thức</b> nền tảng để lập trình Machine
-                        Learning, Deep Learning, AI trong NLP và Computer Vision.
-                    </li>
-                    <li class="text-md mt-2">
-                        <b>Trở thành AI Engineers/Researchers</b> bằng cách tư duy giải quyết vấn đề với công trình khoa
-                        học hàng đầu thế giới.
-                    </li>
-                    <li class="text-md mt-2">
-                        <b>Tối ưu hóa models</b> không chỉ sử dụng prompt để ứng dụng AI cho cá nhân và trong doanh
-                        nghiệp.
-                    </li>
-                    <li class="text-md mt-2">
-                        <b>Build up profile</b> với dự án AI thực tế.
-                    </li>
-                    <li class="text-md mt-2">
-                        <b>Kết nối cộng đồng AI</b> giữa các chuyên gia, doanh nghiệp và cộng đồng
-                        AI tại Việt Nam, giúp họ tiếp cận những cơ hội nghề nghiệp.
-                    </li>
+              </div>
+              <div class="tproject">
+                <div class="tproject-name">CTQT · International Money Transfer</div>
+                <ul class="tcard-bullets">
+                  <li>Engineered AI multi-agent stack: classification, extraction, verification with <strong>fine-tuned
+                      YOLO</strong> for signature/stamp anti-forgery</li>
+                  <li>Productionized AI microservices on <strong>Kubernetes</strong> with Celery, Redis, PostgreSQL,
+                    Qdrant; CI/CD on Triton Inference Server</li>
+                  <li>Achievement: <span class="gold">80% automation rate</span> within 6 months, exceeding client
+                    target by <strong>10%</strong></li>
                 </ul>
-                <div
-                    class="relative overflow-hidden shrink-0 aspect-[2/1] rounded-2xl md:min-w-[400px] max-h-[250px] hidden md:block 2xl:translate-x-36 fade-in">
-                    <img id="target-bg" src="./images/light_target_bg.jpg" alt="target background"
-                        class="w-full h-auto rounded-2xl fade-in" width="600" />
-                    <div
-                        class="rounded-2xl bg-mask dark:bg-dark-mask top-0 bottom-0 left-0 right-0 absolute w-full h-full z-[2] fade-in">
-                    </div>
-                </div>
+              </div>
             </div>
-
-            <!-- Common Purpose -->
-
-            <hr class="w-full h-[1px] my-12 bg-divider dark:bg-dark-divider opacity-35 border-none transition ease duration-300" />
-
-            <!-- Method -->
-            <div id="method" class="fade-in-content opacity-0">
-                <h2
-                    class="text-lg font-semibold mx-auto md:mx-0 bg-transparent border border-primary text-primary rounded-3xl w-fit px-6 py-3 hover:bg-primary hover:text-text transition ease-in-out dark:border-text dark:text-text dark:hover:bg-text dark:hover:text-primary">
-                    💯 Lộ trình học
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                    <div class="bg-light-gray dark:bg-foreground p-4 rounded-lg shadow-lg transition duration-150 ease-in-out hover:scale-105 duration-500 cursor-pointer"
-                        id="purpose1">
-                        <img src="./images/math_and_data.jpg" alt="Image 1" class="rounded-lg mb-2 w-full object-cover"
-                            height="200" />
-                        <p class="text-primary dark:text-text text-center mt-5 font-bold">
-                            Khóa Entry-Level
-                        </p>
-                    </div>
-
-                    <div class="bg-light-gray dark:bg-foreground p-4 rounded-lg shadow-lg transition duration-150 ease-in-out hover:scale-105 duration-500 cursor-pointer"
-                        id="purpose2">
-                        <img src="./images/agent.jpg" alt="Image 2" class="rounded-lg mb-2 w-full object-cover"
-                            height="100" />
-                        <p class="text-primary dark:text-text text-center mt-5 font-bold">
-                            Khóa Engineer
-                        </p>
-                    </div>
-
-                    <div class="bg-light-gray dark:bg-foreground p-4 rounded-lg shadow-lg transition duration-150 ease-in-out hover:scale-105 duration-500 cursor-pointer"
-                        id="purpose3">
-                        <img src="./images/ai_brain.jpg" alt="Image 3" class="rounded-lg mb-2 w-full object-cover"
-                            height="200" />
-                        <p class="text-primary dark:text-text text-center mt-5 font-bold">
-                            Khóa Researcher
-                        </p>
-                    </div>
-                </div>
-                <!-- Method -->
+            <div class="tcard-tags">
+              <span class="ttag">Qwen3-30B</span><span class="ttag">vLLM</span><span class="ttag">Kubernetes</span>
+              <span class="ttag">YOLO</span><span class="ttag">Qdrant</span><span class="ttag">GCP</span>
+              <span class="ttag">FlashAttention</span><span class="ttag">Triton</span>
             </div>
-            <!-- Timeline -->
-            <!-- <div class="w-full max-w-5xl bg-white p-6 rounded-lg shadow-lg">
+          </div>
+        </div>
 
-
-            </div> -->
-
-            
-            <!-- <div class="w-full max-w-5xl bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-center text-2xl font-semibold mb-4">ĐỐI TÁC</h2>
-                <div class="relative overflow-hidden">
-                    <button id="prev"
-                        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md p-2 rounded-full z-10">&#10094;</button>
-                    <div id="carousel" class="flex space-x-6 overflow-x-auto scrollbar-hide p-4">
-                        <img src="logo/bosch.png" alt="bosch" class="h-16">
-                        <img src="logo/seoultech.png" alt="snut" class="h-16">
-                        <img src="logo/cau.png" alt="cau" class="h-16">
-                        <img src="logo/dtu.png" alt="dtu" class="h-16">
-                        <img src="logo/etri.png" alt="etri" class="h-16">
-                        <img src="logo/kist.png" alt="kist" class="h-16">
-                        <img src="logo/soongsil.png" alt="soongsil" class="h-16">
-                        <img src="logo/ucla.png" alt="ucla" class="h-16">
-                        <img src="logo/uts.png" alt="uts" class="h-16">
-                        <img src="logo/vinmotions.png" alt="vinmotion" class="h-16">
-                        <img src="logo/nab.png" alt="Hachinet" class="h-16">
-                    </div>
-                    <button id="next"
-                        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md p-2 rounded-full z-10">&#10095;</button>
-                </div>
-            </div> -->
-            <hr class="w-full h-[1px] my-12 bg-divider dark:bg-dark-divider opacity-35 border-none transition ease duration-300" />
-            <div class="fade-in-content opacity-0">
-                <div class="shadow-lg rounded-lg p-6 w-full">
-                    <h2
-                        class="text-lg font-semibold mx-auto md:mx-0 bg-transparent border border-primary text-primary rounded-3xl w-fit px-6 py-3 hover:bg-primary hover:text-text transition ease-in-out dark:border-text dark:text-text dark:hover:bg-text dark:hover:text-primary">
-                        🚀 Đăng ký qua form:
-                    </h2>
-                    
-                    <div class="py-4 px-6 md:py-10 md:px-20 dark:bg-footer text-center mt-8 fade-in-content opacity-0">
-                        <iframe src="https://forms.gle/TBSjM6eRDxPPH1Pf9?viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" class="w-full h-[800px]">
-                            Loading…
-                        </iframe>
-                    </div>
-
-                    <!-- <div class="overflow-hidden rounded-lg">
-                        <iframe src="https://forms.gle/TBSjM6eRDxPPH1Pf9?viewform?embedded=true" width="100%"
-                            height="800" frameborder="0" marginheight="0" marginwidth="0" class="w-full h-[800px]">
-                            Loading…
-                        </iframe>
-                    </div> -->
-                </div>
+        <!-- Physical AI Lab -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot dot-cyan"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <div class="tcard-company">Physical AI Lab</div>
+                <div class="tcard-role">AI Researcher</div>
+              </div>
+              <div class="tcard-meta">
+                <span class="tcard-period">Jan 2025 – Dec 2025</span>
+                <span class="tcard-badge badge-cyan">Research</span>
+              </div>
             </div>
-
-            <hr class="w-full h-[1px] my-12 bg-divider dark:bg-dark-divider opacity-35 border-none transition ease duration-300" />
-
-            <div id="method" class="fade-in-content opacity-0">
-                <h2
-                class="text-lg font-semibold mx-auto md:mx-0 bg-transparent border border-primary text-primary rounded-3xl w-fit px-6 py-3 hover:bg-primary hover:text-text transition ease-in-out dark:border-text dark:text-text dark:hover:bg-text dark:hover:text-primary">
-                🫱🏻‍🫲🏽 Our network
-                 </h2>
-                <div class="w-full max-w-5xl bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-center text-2xl font-semibold mb-4"></h2>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-6 p-4">
-
-                        <img src="logo/hust.png" alt="hust" class="h-16 mx-auto">
-                        <img src="logo/bkhcm.png" alt="hust" class="h-16 mx-auto">
-                        <img src="logo/hcmute.png" alt="hcmute" class="h-16 mx-auto">
-                        <img src="logo/hcmus.png" alt="hcmus" class="h-16 mx-auto">
-
-                        <img src="logo/seoultech.png" alt="snut" class="h-16 mx-auto">
-                        <img src="logo/cau.png" alt="cau" class="h-16 mx-auto">
-                        <img src="logo/korea.png" alt="korea" class="h-16 mx-auto">
-                        <img src="logo/soongsil.png" alt="soongsil" class="h-16 mx-auto">
-                        <img src="logo/rmit.png" alt="rmit" class="h-16 mx-auto">
-                        <img src="logo/hcmul.png" alt="hcmul" class="h-16 mx-auto">
-
-                        <img src="logo/etri.png" alt="etri" class="h-16 mx-auto">
-                        <img src="logo/kist.png" alt="kist" class="h-16 mx-auto">
-                        <img src="logo/dtu.png" alt="dtu" class="h-16 mx-auto">
-                        <img src="logo/ucla.png" alt="ucla" class="h-16 mx-auto">
-                        <img src="logo/uts.png" alt="uts" class="h-16 mx-auto">
-
-                        <img src="logo/bosch.png" alt="bosch" class="h-16 mx-auto">
-                        <img src="logo/vinmotions.png" alt="vinmotion" class="h-16 mx-auto">
-                        <img src="logo/nab.png" alt="Hachinet" class="h-16 mx-auto">
-                        <img src="logo/fpt.png" alt="Hachinet" class="h-16 mx-auto">
-                        <img src="logo/axonactive.png" alt="Hachinet" class="h-16 mx-auto">
-                    </div>
-                </div>
-        </main>
-
-        <footer
-            class="py-4 px-6 md:py-10 md:px-20 bg-light-gray dark:bg-footer text-center mt-8 fade-in-content opacity-0">
-            <!-- Contact Info -->
-            <h4 class="text-lg">Thông tin liên hệ</h4>
-            <hr
-                class="h-[1px] w-52 my-4 mx-auto bg-divider dark:bg-dark-divider opacity-35 border-none transition ease duration-300" />
-            <div class="text-base">
-                <p>
-
-                    📮 Cá nhân: <a href="mailto:bradduy95@gmail.com"
-                        class="text-blue-500 underline"><span><b>bradduy95@gmail.com</b></span></a>
-                    or 📮 서울과학기술대학교: <a href="mailto:duy.tranthanh@seoultech.ac.kr"
-                        class="text-blue-500 underline"><span><b>duy.tranthanh@seoultech.ac.kr</b></span></a>
-                </p>
-                <p class="text-sm mt-2">
-                    <i>
-                        <span>Tư vấn miễn phí, liên hệ qua Tiktok hoặc Linkedin. Đăng kí khóa học qua email.</span></i>
-                </p>
+            <div class="tcard-projects">
+              <div class="tproject">
+                <div class="tproject-name">3DIS · NRF Korea</div>
+                <ul class="tcard-bullets">
+                  <li>Led R&D of <strong>Open Vocabulary 3D Instance Segmentation</strong> model achieving <span
+                      class="cyan">~2x faster inference</span> without retraining via 2D foundation model + multimodal
+                    alignment</li>
+                  <li>Outperformed <strong>2025 ICML baseline by 3%</strong> on Open Vocabulary 3D Instance Segmentation
+                    benchmark</li>
+                  <li>Evaluated NVIDIA Isaac Sim + ROS 2 for physical AI and robotics simulation pipelines</li>
+                </ul>
+              </div>
+              <div class="tproject">
+                <div class="tproject-name">ZDS · KEIT Korea</div>
+                <ul class="tcard-bullets">
+                  <li>Adapted CLIP-based architectures for agricultural settings, delivering <span class="gold">3x
+                      higher classification performance</span> vs. original CLIP baseline</li>
+                </ul>
+              </div>
             </div>
-            <!-- Contact Info -->
-        </footer>
+            <div class="tcard-tags">
+              <span class="ttag">3D Segmentation</span><span class="ttag">CLIP</span>
+              <span class="ttag">NVIDIA Isaac Sim</span><span class="ttag">ROS 2</span><span class="ttag">VLM</span>
+            </div>
+          </div>
+        </div>
 
-        <!-- Change Dark/Light Mode -->
-        <button id="change-mode"
-            class="fixed right-0 top-[25%] my-auto pl-1.5 pr-2 py-1.5 rounded-l-3xl bg-primary dark:bg-text z-[50] transition ease duration-300">
-            <span
-                class="rounded-full bg-text dark:bg-primary h-6 w-6 flex items-center justify-center transition ease duration-300"><img
-                    id="theme-icon" src="./images/moon-icon.svg" alt="theme icon" width="16" height="16"
-                    class="transition ease duration-300" /></span>
-        </button>
-        <!-- Change Dark/Light Mode -->
-    </body>
+        <!-- Machine Vision Lab -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot dot-cyan"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <div class="tcard-company">Machine Vision Lab · SeoulTech</div>
+                <div class="tcard-role">AI Researcher</div>
+              </div>
+              <div class="tcard-meta">
+                <span class="tcard-period">Sep 2020 – Dec 2024</span>
+                <span class="tcard-badge badge-cyan">Research</span>
+              </div>
+            </div>
+            <div class="tcard-projects">
+              <div class="tproject">
+                <div class="tproject-name">OVIS · NRF — Open-Vocabulary Instance Segmentation</div>
+                <ul class="tcard-bullets">
+                  <li>Developed state-of-the-art VLM for zero-shot detection/segmentation in autonomous systems;
+                    utilized RAG/VectorDB for LLM-enhanced multimodal training</li>
+                  <li>Achieved <span class="gold">22.1% improvement</span> over 2024 ICCV baseline; 50% reduction in
+                    training time</li>
+                  <li>Deployed real-time inference on GCP + HuggingFace Inference Endpoints; CI/CD via GitHub Actions
+                  </li>
+                </ul>
+              </div>
+              <div class="tproject">
+                <div class="tproject-name">CC-Person reID · NRF — Security Camera Networks</div>
+                <ul class="tcard-bullets">
+                  <li>CNN-based person re-identification under occlusion for South Korea CCTV networks; 4% improvement
+                    on Long-term Person Re-ID benchmark</li>
+                  <li>Real-time inference via Kafka streaming + HuggingFace Space Inference Service</li>
+                </ul>
+              </div>
+              <div class="tproject">
+                <div class="tproject-name">ROI-OD · ETRI — Sports Broadcasting AI</div>
+                <ul class="tcard-bullets">
+                  <li>AI-based object detection and ROI selection for sports broadcasting, reducing manual camera
+                    operations</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tcard-tags">
+              <span class="ttag">VLM</span><span class="ttag">RAG</span><span class="ttag">PyTorch</span>
+              <span class="ttag">Detectron2</span><span class="ttag">Kafka</span><span class="ttag">GCP</span>
+              <span class="ttag">Zero-Shot</span>
+            </div>
+          </div>
+        </div>
 
-    </html>
+        <!-- Bosch -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot dot-gold"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <div class="tcard-company">Robert Bosch GmbH</div>
+                <div class="tcard-role">Senior Software Engineer</div>
+              </div>
+              <div class="tcard-meta">
+                <span class="tcard-period">Sep 2018 – Aug 2020</span>
+                <span class="tcard-badge badge-gold">Industry</span>
+              </div>
+            </div>
+            <div class="tcard-projects">
+              <div class="tproject">
+                <div class="tproject-name">iGPM · BAP · ThingBook</div>
+                <ul class="tcard-bullets">
+                  <li>Full-stack development with <strong>Angular + Java Spring Boot</strong>, microservices, Redis,
+                    Kafka, Docker, Oracle; code reviewer for team engineers</li>
+                  <li>Implemented JWT auth, Push Notification, SMS Verification, ElasticSearch, SAGA pattern, MongoDB
+                  </li>
+                  <li>Achievement: <span class="gold">3× "Best Performance" Award</span> from Bosch for consistent
+                    quality delivery</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tcard-tags">
+              <span class="ttag">Java Spring Boot</span><span class="ttag">Angular</span>
+              <span class="ttag">Kafka</span><span class="ttag">Redis</span><span class="ttag">Docker</span>
+              <span class="ttag">Microservices</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ RESEARCH ═══════════════════ -->
+  <section id="research" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">// 03</span>
+        <h2 class="section-title">Research</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="research-grid">
+        <div class="pub-card reveal-up">
+          <div class="pub-header">
+            <div class="pub-badge">Q1 Journal</div>
+            <div class="pub-journal">NEUROCOMPUTING</div>
+          </div>
+          <h3 class="pub-title">Enhancing Long-Term Person Re-Identification Using Global, Local Body Part, and Head
+            Streams</h3>
+          <div class="pub-authors">Duy Tran Thanh, Yeejin Lee, Byeongkeun Kang</div>
+          <p class="pub-abstract">
+            Addresses long-term person re-identification where human appearance is inconsistent across real-life
+            security camera networks.
+            Achieves <span class="gold">+4.0% and +7.3% rank-1 accuracy</span> on Celeb-reID and PRCC datasets.
+          </p>
+          <div class="pub-metrics">
+            <div class="pub-metric"><span class="pm-val">+4.0%</span><span class="pm-label">Celeb-reID</span></div>
+            <div class="pub-metric"><span class="pm-val">+7.3%</span><span class="pm-label">PRCC Dataset</span></div>
+          </div>
+          <a href="#" class="btn btn-pub">Read Paper →</a>
+        </div>
+        <div class="research-highlights reveal-up">
+          <h3 class="rh-title">Research Highlights</h3>
+          <div class="rh-items">
+            <div class="rh-item">
+              <div class="rh-icon rh-cyan">01</div>
+              <div class="rh-content">
+                <div class="rh-name">Open-Vocabulary 3D Instance Segmentation</div>
+                <div class="rh-desc">Novel 3D perception framework outperforming <strong>2025 ICML baseline by
+                    3%</strong> with ~2x faster inference via 2D foundation model alignment</div>
+                <div class="rh-tag">Physical AI Lab · NRF Korea</div>
+              </div>
+            </div>
+            <div class="rh-item">
+              <div class="rh-icon rh-gold">02</div>
+              <div class="rh-content">
+                <div class="rh-name">Open-Vocabulary 2D Instance Segmentation</div>
+                <div class="rh-desc"><strong>22.1% improvement</strong> over 2024 ICCV baseline; VLM + RAG for zero-shot
+                  class-incremental detection in autonomous systems</div>
+                <div class="rh-tag">Machine Vision Lab · NRF Korea</div>
+              </div>
+            </div>
+            <div class="rh-item">
+              <div class="rh-icon rh-cyan">03</div>
+              <div class="rh-content">
+                <div class="rh-name">Document Intelligence for Finance</div>
+                <div class="rh-desc">Reasoning-first LLM pipeline with <strong>98% OCR accuracy</strong> and explainable
+                  rule-engine for compliance in banking operations</div>
+                <div class="rh-tag">OneMount · Techcombank</div>
+              </div>
+            </div>
+            <div class="rh-item">
+              <div class="rh-icon rh-gold">04</div>
+              <div class="rh-content">
+                <div class="rh-name">Open Source: Mistral CoreML (Apple)</div>
+                <div class="rh-desc">Successfully merged pull request to official Mistral CoreML repository;
+                  sentiment/coding assistant with Llama-3.1 + LangChain</div>
+                <div class="rh-tag">Open Source Contribution</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SKILLS ═══════════════════ -->
+  <section id="skills" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">// 04</span>
+        <h2 class="section-title">Skills &amp; Stack</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-group reveal-up">
+          <div class="sg-header sg-cyan">
+            <span class="sg-icon">🧠</span>
+            <span class="sg-title">LLMs &amp; AI Agents</span>
+          </div>
+          <div class="sg-tags">
+            <span class="stag stag-hot">Qwen3-30B</span>
+            <span class="stag stag-hot">vLLM</span>
+            <span class="stag stag-hot">LangChain</span>
+            <span class="stag stag-hot">LangGraph</span>
+            <span class="stag">LlamaIndex</span>
+            <span class="stag">RAG</span>
+            <span class="stag">OpenAI</span>
+            <span class="stag">Gemini</span>
+            <span class="stag stag-hot">Qdrant</span>
+            <span class="stag">FAISS</span>
+            <span class="stag">Pinecone</span>
+            <span class="stag">Unsloth</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal-up">
+          <div class="sg-header sg-gold">
+            <span class="sg-icon">👁️</span>
+            <span class="sg-title">Computer Vision</span>
+          </div>
+          <div class="sg-tags">
+            <span class="stag stag-hot">PyTorch</span>
+            <span class="stag stag-hot">TensorFlow</span>
+            <span class="stag stag-hot">OpenCV</span>
+            <span class="stag stag-hot">Detectron2</span>
+            <span class="stag stag-hot">YOLO</span>
+            <span class="stag">CLIP</span>
+            <span class="stag">BLIP</span>
+            <span class="stag">Stable Diffusion</span>
+            <span class="stag">scikit-learn</span>
+            <span class="stag">HRNet</span>
+            <span class="stag">CoreML</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal-up">
+          <div class="sg-header sg-cyan">
+            <span class="sg-icon">⚙️</span>
+            <span class="sg-title">MLOps &amp; Infrastructure</span>
+          </div>
+          <div class="sg-tags">
+            <span class="stag stag-hot">Kubernetes</span>
+            <span class="stag stag-hot">Docker</span>
+            <span class="stag stag-hot">GCP</span>
+            <span class="stag">AWS</span>
+            <span class="stag stag-hot">Triton Inference Server</span>
+            <span class="stag">FlashAttention</span>
+            <span class="stag">MLflow</span>
+            <span class="stag">Kubeflow</span>
+            <span class="stag">Apache Airflow</span>
+            <span class="stag">Prefect</span>
+            <span class="stag">GitHub Actions</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal-up">
+          <div class="sg-header sg-gold">
+            <span class="sg-icon">🏗️</span>
+            <span class="sg-title">Backend &amp; Software</span>
+          </div>
+          <div class="sg-tags">
+            <span class="stag stag-hot">Python</span>
+            <span class="stag stag-hot">FastAPI</span>
+            <span class="stag">Java</span>
+            <span class="stag">Spring Boot</span>
+            <span class="stag">JavaScript</span>
+            <span class="stag">TypeScript</span>
+            <span class="stag">Next.js</span>
+            <span class="stag">Angular</span>
+            <span class="stag">Microservices</span>
+            <span class="stag">SAGA Pattern</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal-up">
+          <div class="sg-header sg-cyan">
+            <span class="sg-icon">📊</span>
+            <span class="sg-title">Data &amp; Streaming</span>
+          </div>
+          <div class="sg-tags">
+            <span class="stag stag-hot">Kafka</span>
+            <span class="stag stag-hot">Redis</span>
+            <span class="stag">Celery</span>
+            <span class="stag">PostgreSQL</span>
+            <span class="stag">MongoDB</span>
+            <span class="stag">Oracle</span>
+            <span class="stag">Spark</span>
+            <span class="stag">Databricks</span>
+            <span class="stag">Debezium</span>
+            <span class="stag">ElasticSearch</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal-up">
+          <div class="sg-header sg-gold">
+            <span class="sg-icon">🏦</span>
+            <span class="sg-title">Finance &amp; Banking Domain</span>
+          </div>
+          <div class="sg-tags">
+            <span class="stag stag-hot">Document Intelligence</span>
+            <span class="stag stag-hot">KYC / KIE</span>
+            <span class="stag stag-hot">Compliance AI</span>
+            <span class="stag">OCR Pipelines</span>
+            <span class="stag">Rule Engines</span>
+            <span class="stag">Anti-Forgery</span>
+            <span class="stag">Regulatory AI</span>
+            <span class="stag">International Transfers</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">// 05</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="proj-card reveal-up">
+          <div class="proj-top">
+            <div class="proj-icon proj-icon-cyan">🤖</div>
+            <div class="proj-links">
+              <a href="#" class="proj-link" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Social Multi-AI Agents</h3>
+          <p class="proj-desc">Multi-agent system integrated into Vietnam Korea Hub Discord server — orchestrating
+            Gemini (Q&A), PaddleOCR (text extraction), Stable Diffusion (image gen), BLIP (captioning) for rich
+            multimodal workflows. Automated Facebook recruitment/scholarship post collection and classification.</p>
+          <div class="proj-tags">
+            <span class="ptag">LangGraph</span><span class="ptag">Gemini</span>
+            <span class="ptag">Stable Diffusion</span><span class="ptag">PaddleOCR</span>
+            <span class="ptag">Multi-Agent</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal-up">
+          <div class="proj-top">
+            <div class="proj-icon proj-icon-gold">📚</div>
+            <div class="proj-links">
+              <a href="#" class="proj-link" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">EdTech — Agentic AI for English Education</h3>
+          <p class="proj-desc">Agentic AI system for automatic scoring of student English submissions from voice
+            (Whisper, TTS) and text (Gemini). LangGraph long-term memory for personalized feedback on recurring
+            mistakes. Scheduled daily study reminders to boost learning engagement.</p>
+          <div class="proj-tags">
+            <span class="ptag">LangGraph</span><span class="ptag">Whisper</span>
+            <span class="ptag">Gemini</span><span class="ptag">Long-term Memory</span>
+            <span class="ptag">Data Pipeline</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal-up">
+          <div class="proj-top">
+            <div class="proj-icon proj-icon-cyan">🏦</div>
+            <div class="proj-links">
+              <a href="#" class="proj-link" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Document AI — Banking Compliance Pipeline</h3>
+          <p class="proj-desc">Production-grade end-to-end Document AI automation for Techcombank's international money
+            transfer operations. Multi-layer validation combining LLM reasoning + deterministic rule engine with 80%
+            automation rate, exceeding client targets by 10%.</p>
+          <div class="proj-tags">
+            <span class="ptag">Qwen3-30B</span><span class="ptag">ChandraOCR</span>
+            <span class="ptag">vLLM</span><span class="ptag">YOLO</span>
+            <span class="ptag">Kubernetes</span><span class="ptag">GCP</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal-up">
+          <div class="proj-top">
+            <div class="proj-icon proj-icon-gold">🤝</div>
+            <div class="proj-links">
+              <a href="#" class="proj-link" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="proj-title">Mistral CoreML — Open Source (Apple)</h3>
+          <p class="proj-desc">Successfully merged pull request to the official Mistral CoreML Apple repository. Built a
+            sentiment analysis and coding assistant application using Llama-3.1 (Meta) with LangChain library via
+            Ollama, enabling local on-device AI inference.</p>
+          <div class="proj-tags">
+            <span class="ptag">CoreML</span><span class="ptag">Llama-3.1</span>
+            <span class="ptag">LangChain</span><span class="ptag">Ollama</span>
+            <span class="ptag">Open Source</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EDUCATION ═══════════════════ -->
+  <section id="education" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">// 06</span>
+        <h2 class="section-title">Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card reveal-up">
+          <div class="edu-flag">🇰🇷</div>
+          <div class="edu-body">
+            <div class="edu-degree">Visiting Researcher</div>
+            <div class="edu-school">Chung-Ang University</div>
+            <div class="edu-location">Seoul, Republic of Korea</div>
+            <div class="edu-period">2025 – Present</div>
+          </div>
+          <div class="edu-badge edu-badge-cyan">Active</div>
+        </div>
+        <div class="edu-card reveal-up">
+          <div class="edu-flag">🇰🇷</div>
+          <div class="edu-body">
+            <div class="edu-degree">PhD Candidate — AI / Computer Vision</div>
+            <div class="edu-school">Seoul National University of Science and Technology</div>
+            <div class="edu-location">Seoul, Republic of Korea</div>
+            <div class="edu-period">2020 – Present</div>
+          </div>
+          <div class="edu-badge edu-badge-gold">PhD</div>
+        </div>
+        <div class="edu-card reveal-up">
+          <div class="edu-flag">🇻🇳</div>
+          <div class="edu-body">
+            <div class="edu-degree">Bachelor of Engineering — Honors</div>
+            <div class="edu-school">HCMC University of Technology and Education</div>
+            <div class="edu-location">Ho Chi Minh City, Vietnam</div>
+            <div class="edu-period">2016</div>
+          </div>
+          <div class="edu-badge edu-badge-cyan">Honors</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">// 07</span>
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-content reveal-up">
+        <p class="contact-intro">
+          I'm open to research collaborations, senior AI engineering roles, and consulting in
+          <span class="gold">finance &amp; banking AI</span>. Let's build something intelligent together.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:tranthanhduy279@gmail.com" class="contact-card">
+            <div class="cc-icon cc-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 7L2 7" />
+              </svg>
+            </div>
+            <div class="cc-text">
+              <div class="cc-label">Email</div>
+              <div class="cc-val">tranthanhduy279@gmail.com</div>
+            </div>
+          </a>
+          <a href="#" class="contact-card">
+            <div class="cc-icon cc-gold">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </div>
+            <div class="cc-text">
+              <div class="cc-label">LinkedIn</div>
+              <div class="cc-val">linkedin.com/in/duytranthanh</div>
+            </div>
+          </a>
+          <a href="#" class="contact-card">
+            <div class="cc-icon cc-cyan">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z" />
+              </svg>
+            </div>
+            <div class="cc-text">
+              <div class="cc-label">Google Scholar</div>
+              <div class="cc-val">View Publications</div>
+            </div>
+          </a>
+          <a href="tel:+86862570012" class="contact-card">
+            <div class="cc-icon cc-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16" />
+              </svg>
+            </div>
+            <div class="cc-text">
+              <div class="cc-label">Phone (Vietnam)</div>
+              <div class="cc-val">+86-862-570-012</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">[</span>DTT<span class="logo-bracket">]</span>
+        </div>
+        <div class="footer-text">
+          <span class="cyan">Duy Tran Thanh</span> · Senior AI Engineer · PhD Candidate
+        </div>
+        <div class="footer-text">
+          Building the future of <span class="gold">intelligent finance</span> with AI
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 
 </html>

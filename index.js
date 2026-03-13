@@ -1,265 +1,257 @@
-// DATA & CONFIG
-let themeMode = "light";
-let isDarkMode = themeMode === "dark";
-//     Lợi ích khi bạn tham gia khóa Entry-level: Hiểu để sử dụng toán trong tất cả ngành nghề (tài chính, marketing, blockchain, quỹ đầu tư cho đến AI). bạn còn biết về dữ liệu để khai thác thông tin dữ liệu một cách hợp lý. (dữ liệu là mỏ vàng)
-/* <li class="text-base">
-<ul class="list-inside list-disc"><b>Part 2: Dữ liệu và xử lý dữ liệu</b>
-    <li>Distribution</li>
-    <li>Phân Tích</li>
-    <li>Sử dụng python để  phân tích dữ liệu</li>
-</ul>
-// </li> */
-const rawData = {
-    content1: ` 
-    <p class="text-red-500 text-left ext-xl font-bold text-gray-900 dark:text-white">BẠN SẼ ĐƯỢC:</p>
-    <ul class="list-disc text-left">
-        <li class="text-base">Thay vì chỉ lý thuyết, dùng toán để ứng dụng trong mọi ngành nghề, từ <strong>e-commerce, fintech, marketing, blockchain, đầu tư chứng khoán</strong> cho đến <strong>AI</strong>.</li>
-        <li class="text-base">Biết thế nào khai thác dữ liệu một cách hiệu quả vì dữ liệu là "mỏ vàng".</li>
-        <li class="text-base"><div class="font-semibold text-red-500 inline">Giảm 10%</div> khi đăng kí khóa tiếp theo.</li>
-        <li class="text-base"><div class="font-semibold text-red-500 inline">Nhận 8% affiliates</div> với mỗi lượt giới thiệu thành công.</li>
-    </ul>
+/* ═══════════════════════════════════════════
+   NEURAL NETWORK CANVAS ANIMATION
+═══════════════════════════════════════════ */
+(function initNeuralCanvas() {
+  const canvas = document.getElementById('neural-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
 
-    <ul class="list-disc text-left">
-        <li class="text-base"><b>Kiến thức bao gồm: </b>
-            <ul class="list-inside list-disc">
-                <li>Đại số tuyến tính/Ma trận</li>
-                <li>Giải tích</li>
-                <li>Xác suất và thống kê</li>
-                <li>Distribution</li>
-                <li>Phân Tích</li>
-                <li>Lập trình</li>
-                <li>Sử dụng python để phân tích dữ liệu</li>
-                <li>Xử lý Big Data trong các bài toán doanh nghiệp</li>
-            </ul>
-        </li>
-    </ul>
-    `,
-    content2:
-        `
-    <p class="text-red-500 text-left ext-xl font-bold text-gray-900 dark:text-white">BẠN SẼ ĐƯỢC:</p>
-    <ul class="list-disc text-left">
-        <li class="text-base">Xây dựng profile bằng dự án thực tế</li>
-        <li class="text-base">Biết cách dạy và tối ưu tất cả các loại AI, không chỉ sử dụng câu lệnh prompt.</li>
-        <li class="text-base"><div class="font-semibold text-red-500 inline">Giảm 10%</div> khi đăng kí khóa tiếp theo.</li>
-        <li class="text-base"><div class="font-semibold text-red-500 inline">Nhận 8% affiliates</div> với mỗi lượt giới thiệu thành công.</li>
-        </ul>
+  const CYAN  = '#00d4ff';
+  const GOLD  = '#f0b429';
+  const NODE_COUNT = 70;
+  const CONNECTION_DIST = 160;
+  const MOUSE_REPEL = 100;
 
-    <ul class="list-disc text-left">
-        <li class="text-base"><b>Part 1: Advanced Machine Learning & Feature engineering</b>
-            <ul class="list-inside list-disc">
-            <li>Thu thập và khai thác dữ liệu bằng python</li>
-            <li>Huẩn luyện cho machine learning models</li>
-            <li>Sử dụng AI trong tài chính (đầu tư)</li>
-            </ul>
-        </li>
-    </ul>
+  let W, H, nodes, mouse = { x: -9999, y: -9999 };
 
-    <ul class="list-disc text-left">
-        <li class="text-base"><b>Part 2: Deep Learning & Computer Vision</b>
-            <ul class="list-inside list-disc">
-            <li>Transformer</li>
-            <li>Training AI models</li>
-            <li>Finetune models với mục đích cụ thể của doanh nghiệp</li>
-            </ul>
-        </li>
-    </ul>
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
 
-    <ul class="list-disc text-left">
-        <li class="text-base"><b>Part 3: LLM & GenAI</b>
-            <ul class="list-inside list-disc">
-                <li>Xử lý ngôn ngữ tự nhiên (LLM)</li>
-                <li>Thuật toán của GenAI trong Midjourney và ChatGPT.</li>
-                <li>Học cách tinh chỉnh LLMs và ứng dụng cho cá nhân và doanh nghiệp.</li>
-            </ul>
-        </li>
-    </ul>
+  function createNodes() {
+    nodes = Array.from({ length: NODE_COUNT }, () => ({
+      x:  Math.random() * W,
+      y:  Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r:  Math.random() * 2 + 1,
+      color: Math.random() > 0.65 ? GOLD : CYAN,
+    }));
+  }
 
-    `,
-    content3: `
-    <p class="text-red-500 text-left ext-xl font-bold text-gray-900 dark:text-white">BẠN SẼ ĐƯỢC:</p>
-    <ul class="list-disc text-left">
-        <li class="text-base">Được học đọc và cách nghiên cứu bài báo khoa học top hàng đầu thế giới </li>
-        <li class="text-base">Được rèn luyện kỹ năng như một AI Researcher.</li>
-        <li class="text-base">Luyện tư duy startup như DeepSeek.</li>
-        <li class="text-base"><div class="font-semibold text-red-500 inline">Nhận 8% affiliates</div> với mỗi lượt giới thiệu thành công.</li>
-    </ul>
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
 
-
-    <ul class="list-disc text-left">
-        <li class="text-base"><b>Become a Researcher: </b>
-            <ul class="list-inside list-disc">
-                <li>Chi tiết liên hệ qua mail: <a href="mailto:bradduy95@gmail.com" class="text-blue-500 underline">📮: bradduy95@gmail.com</a>
-            </li>
-            </ul>
-        </li>
-    </ul>
-    
-    `
-
-}
-
-const [popupContent1, popupContent2, popupContent3] = Object.keys(rawData).map((k) => {
-    return `
-        <div class="px-8">
-            ${rawData[k]}
-        </div>
-    `
-});
-
-
-const purposeIDs = {
-    purpose1: {
-        id: "purpose1",
-        content: popupContent1
-    },
-    purpose2: { id: "purpose2", content: popupContent2 },
-    purpose3: { id: "purpose3", content: popupContent3 },
-}
-
-const baseConfig = {
-    // fixedHeight: true,
-    // heightMultiplier: 0.8,
-    // height: "600px"
-}
-
-let popupConfig = {
-    backgroundColor: "var(--text)",
-    textColor: "var(--primary)",
-    titleColor: "var(--primary)",
-    closeColor: "var(--primary-foreground)",
-    ...baseConfig
-};
-
-
-const popupTitle_entry = `<p class="text-xl">Dành cho Entry-level</>
-  <hr class="h-[1.5px] w-full my-4 mx-auto bg-divider opacity-35 border-none" />`;
-
-const popupTitle_engineer = `<p class="text-xl">Khóa trở thành AI Engineer</>
-  <hr class="h-[1.5px] w-full my-4 mx-auto bg-divider opacity-35 border-none" />`;
-
-const popupTitle_researcher = `<p class="text-xl">Khóa trở thành AI Researcher</>
-  <hr class="h-[1.5px] w-full my-4 mx-auto bg-divider opacity-35 border-none" />`;
-
-// QUERY ELEMENTS
-const purpose1 = document.getElementById(purposeIDs.purpose1.id);
-const purpose2 = document.getElementById(purposeIDs.purpose2.id);
-const purpose3 = document.getElementById(purposeIDs.purpose3.id);
-const methodElm = document.getElementById("method");
-const toggleModeElm = document.getElementById("change-mode");
-const headerBgElm = document.getElementById("header-bg");
-const targetBgElm = document.getElementById("target-bg");
-const themeIconElm = document.getElementById("theme-icon");
-const popupBodyElms = document.getElementsByClassName("popup-body");
-const popupContentElms = document.getElementsByClassName("popup-content");
-
-
-// EVENT TRIGGER
-const configPopupStyle = () => {
-    const bodyElmArr = popupBodyElms ? Array.from(popupBodyElms) : [];
-    const contentElmArr = popupContentElms ? Array.from(popupContentElms) : [];
-
-    if (bodyElmArr.length) {
-        bodyElmArr.forEach((elm) => elm.classList.add("overflow-x-auto"))
+    // Draw connections
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECTION_DIST) {
+          const alpha = (1 - dist / CONNECTION_DIST) * 0.35;
+          const gradient = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+          gradient.addColorStop(0, a.color + Math.round(alpha * 255).toString(16).padStart(2, '0'));
+          gradient.addColorStop(1, b.color + Math.round(alpha * 255).toString(16).padStart(2, '0'));
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
     }
 
-    if (contentElmArr.length) {
-        contentElmArr.forEach((elm) => elm.classList.add("max-h-[350px]", "lg:max-h-[600px]"))
+    // Draw nodes
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = n.color;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = n.color;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    });
+  }
+
+  function update() {
+    nodes.forEach(n => {
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+
+      // mouse repel
+      const dx = n.x - mouse.x, dy = n.y - mouse.y;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      if (d < MOUSE_REPEL) {
+        n.vx += (dx / d) * 0.3;
+        n.vy += (dy / d) * 0.3;
+        const speed = Math.sqrt(n.vx * n.vx + n.vy * n.vy);
+        if (speed > 2) { n.vx = (n.vx / speed) * 2; n.vy = (n.vy / speed) * 2; }
+      }
+    });
+  }
+
+  function loop() {
+    update();
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('resize', () => { resize(); createNodes(); });
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
+  resize();
+  createNodes();
+  loop();
+})();
+
+
+/* ═══════════════════════════════════════════
+   TYPEWRITER EFFECT
+═══════════════════════════════════════════ */
+(function initTypewriter() {
+  const el = document.getElementById('typewriter');
+  if (!el) return;
+
+  const phrases = [
+    'PhD Candidate · AI/CV',
+    'Document Intelligence',
+    'LLM Reasoning Engineer',
+    'Banking AI Architect',
+    'Multi-Agent Systems',
+    'Computer Vision Researcher',
+  ];
+
+  let phraseIdx = 0, charIdx = 0, deleting = false;
+
+  function tick() {
+    const current = phrases[phraseIdx];
+    if (!deleting) {
+      el.textContent = current.slice(0, ++charIdx);
+      if (charIdx === current.length) {
+        deleting = true;
+        setTimeout(tick, 2000);
+        return;
+      }
+    } else {
+      el.textContent = current.slice(0, --charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+      }
     }
+    setTimeout(tick, deleting ? 40 : 65);
+  }
+
+  setTimeout(tick, 800);
+})();
+
+
+/* ═══════════════════════════════════════════
+   COUNTER ANIMATION
+═══════════════════════════════════════════ */
+function animateCounter(el, target, duration) {
+  const start = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(step);
 }
 
-purpose1 && purpose1.addEventListener('click', () => {
-    const purpose1Popup = new Popup({
-        id: purposeIDs.purpose1.id,
-        title: popupTitle_entry,
-        content: purposeIDs.purpose1.content,
-        ...popupConfig,
+let countersStarted = false;
+function maybeStartCounters() {
+  if (countersStarted) return;
+  const statsEl = document.querySelector('.hero-stats');
+  if (!statsEl) return;
+  const rect = statsEl.getBoundingClientRect();
+  if (rect.top < window.innerHeight) {
+    countersStarted = true;
+    document.querySelectorAll('.hstat-val[data-count]').forEach(el => {
+      animateCounter(el, parseInt(el.dataset.count, 10), 1800);
     });
-
-    purpose1Popup.show();
-    configPopupStyle();
-});
-
-purpose2 && purpose2.addEventListener('click', () => {
-    const purpose2Popup = new Popup({
-        id: purposeIDs.purpose2.id,
-        title: popupTitle_engineer,
-        content: purposeIDs.purpose2.content,
-        ...popupConfig,
-    });
-
-    purpose2Popup.show();
-    configPopupStyle();
-});
-
-purpose3 && purpose3.addEventListener('click', () => {
-    const purpose3Popup = new Popup({
-        id: purposeIDs.purpose3.id,
-        title: popupTitle_researcher,
-        content: purposeIDs.purpose3.content,
-        ...popupConfig,
-    });
-
-    purpose3Popup.show();
-    configPopupStyle();
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-
-            if (!methodElm) return;
-
-            if (entry.isIntersecting) {
-                entry.target && entry.target.classList.add(`animate-fade-in`);
-                entry.target && entry.target.classList.remove(`opacity-0`);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.2
-    });
-
-
-    document.querySelectorAll('.fade-in-content').forEach(element => {
-        observer.observe(element);
-    });
-});
-
-const changeDarkMode = () => {
-    themeMode = "dark";
-    document.documentElement.classList.add("dark");
-    headerBgElm && headerBgElm.setAttribute("src", "./images/dark_header_bg.jpg");
-    targetBgElm && targetBgElm.setAttribute("src", "./images/dark_target_bg.jpg")
-    themeIconElm && themeIconElm.setAttribute("src", "./images/sun-icon.svg");
-
-    popupConfig = {
-        backgroundColor: "var(--primary-foreground)",
-        textColor: "var(--text)",
-        titleColor: "var(--text)",
-        closeColor: "var(--gray)",
-    };
+  }
 }
 
-const changeLightMode = () => {
-    themeMode = "light";
-    document.documentElement.classList.remove("dark");
-    headerBgElm && headerBgElm.setAttribute("src", "./images/light_header_bg.jpg");
-    targetBgElm && targetBgElm.setAttribute("src", "./images/light_target_bg.jpg");
-    themeIconElm && themeIconElm.setAttribute("src", "./images/moon-icon.svg");
 
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════ */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('revealed');
+      }, i * 80);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    popupConfig = {
-        backgroundColor: "var(--text)",
-        textColor: "var(--primary)",
-        titleColor: "var(--primary)",
-        closeColor: "var(--primary-foreground)",
-    };
-
-}
-
-toggleModeElm && toggleModeElm.addEventListener('click', () => {
-    themeMode === "dark" ? changeLightMode() : changeDarkMode();
+document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+  revealObserver.observe(el);
 });
 
 
+/* ═══════════════════════════════════════════
+   NAVBAR — scroll state + active link
+═══════════════════════════════════════════ */
+const navbar = document.getElementById('navbar');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+
+function updateNav() {
+  // Scrolled class
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+
+  // Active link highlight
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) {
+      current = sec.id;
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+
+  maybeStartCounters();
+}
+
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+
+
+/* ═══════════════════════════════════════════
+   HAMBURGER MENU
+═══════════════════════════════════════════ */
+const hamburger = document.getElementById('hamburger');
+const navLinksContainer = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinksContainer.classList.toggle('open');
+});
+
+navLinksContainer.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinksContainer.classList.remove('open');
+  });
+});
+
+
+/* ═══════════════════════════════════════════
+   SMOOTH SCROLL for anchors
+═══════════════════════════════════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10) || 64;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
